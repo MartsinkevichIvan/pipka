@@ -6,25 +6,25 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class SingletonDriver {
+public class SingletonDriver{
 
     private static WebDriver driver;
 
-    public static WebDriver getDriver() {
-        if (driver == null) {
-            if(System.getProperty("browser")==null){
-                System.setProperty("browser","chrome");
+    public static WebDriver getDriver(){
+        if(driver == null){
+            if(System.getProperty("browser") == null){
+                System.setProperty("browser", "chrome");
             }
-            switch (System.getProperty("browser")) {
-                case "firefox": {
+            switch(System.getProperty("browser")){
+                case "firefox":{
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
                 }
-                case "explorer": {
+                case "explorer":{
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
                 }
-                default: {
+                default:{
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                 }
