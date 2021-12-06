@@ -19,9 +19,13 @@ public class SingleTest extends BaseTest{
     public void checkSearchDisplayed(){
         SingletonDriver.getDriver().get("https://www.youtube.com/");
         Wait.forMillis(3000);
+<<<<<<< HEAD
         var elements = page.getFilterBlock().getFiltersList();
 
         page.getFilterBlock().getFiltersList();
 
+=======
+        Assert.assertTrue(page.getSearchBlock().getLogoIcon().isDisplayed());
+>>>>>>> 7767d425fb033de428820ff149a064f86548f2e2
     }
 }
