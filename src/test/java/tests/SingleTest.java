@@ -15,7 +15,7 @@ public class SingleTest extends BaseTest{
     @Test
     public void checkSearchDisplayed(){
         SingletonDriver.getDriver().get("https://www.youtube.com/");
-        Wait.forMillis(10000);
-        Assert.assertTrue(page.getLogoIcon().isDisplayed());
+        Wait.forMillis(3000);
+        Assert.assertTrue(page.getSearchBlock().getLogoIcon().isDisplayed());
     }
 }

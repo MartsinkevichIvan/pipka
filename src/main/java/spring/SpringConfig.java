@@ -1,7 +1,9 @@
 package spring;
 
+import driver.CustomFieldDecorator;
 import driver.SingletonDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.DefaultElementLocatorFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -15,7 +17,7 @@ import spring.annotations.Block;
 import spring.annotations.PageObject;
 
 @Configuration
-@ComponentScan(basePackages = "pages")
+@ComponentScan(basePackages = {"pages", "blocks"})
 public class SpringConfig{
     @Bean
     public static BeanFactoryPostProcessor beanFactoryPostProcessor(){
@@ -34,7 +36,7 @@ public class SpringConfig{
         @Override
         public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException{
             if(bean.getClass().isAnnotationPresent(PageObject.class) || bean.getClass().isAnnotationPresent(Block.class))
-                return PageFactory.initElements(SingletonDriver.getDriver(), bean.getClass());
+                PageFactory.initElements(new CustomFieldDecorator(new DefaultElementLocatorFactory(SingletonDriver.getDriver())), bean);
             return bean;
         }
     }
