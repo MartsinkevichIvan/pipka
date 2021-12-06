@@ -11,11 +11,18 @@
                 <Pattern>%d %p %c{2} [%t] %l %m%n</Pattern>
             </PatternLayout>
         </ReportPortalLog4j2Appender>
+        <!--Temp to check out the loggig-->
+        <File name="File" fileName="target/logs/test.log">
+            <PatternLayout>
+                <Pattern>%d %p %c{2} [%t] %l %m%n</Pattern>
+            </PatternLayout>
+        </File>
     </Appenders>
     <Loggers>
         <Root level="INFO">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="ReportPortalAppender"/>
+            <AppenderRef ref="File"/>
         </Root>
     </Loggers>
 </Configuration>
