@@ -15,7 +15,7 @@ import spring.annotations.Block;
 import spring.annotations.PageObject;
 
 @Configuration
-@ComponentScan(basePackages = "pages")
+@ComponentScan(basePackages = {"pages", "blocks"})
 public class SpringConfig{
     @Bean
     public static BeanFactoryPostProcessor beanFactoryPostProcessor(){
