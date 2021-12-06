@@ -20,11 +20,11 @@ public class TestListener implements ITestListener {
     private Logger log = LogManager.getRootLogger();
 
     public void onTestStart(ITestResult iTestResult) {
-
+        log.info("!!!!!!!!!!!!TEST " + iTestResult.getName() + " STARTED SUCCESSFULLY");
     }
 
     public void onTestSuccess(ITestResult iTestResult) {
-
+        log.info("!!!!!!!!!!!!TEST " + iTestResult.getName() + " PASSED SUCCESSFULLY");
     }
 
     public void onTestFailure(ITestResult iTestResult) {
