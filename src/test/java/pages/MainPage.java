@@ -1,18 +1,13 @@
 package pages;
 
+import blocks.SearchBlock;
 import lombok.Getter;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.springframework.beans.factory.annotation.Autowired;
 import spring.annotations.PageObject;
 
 @PageObject
 @Getter
 public class MainPage extends AbstractPage{
-    @FindBy(id = "search")
-    private WebElement search;
-    @FindBy(id = "logo-icon")
-    private WebElement logoIcon;
-
-
-
+    @Autowired
+    SearchBlock searchBlock;
 }

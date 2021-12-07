@@ -1,6 +1,7 @@
 package tests;
 
 import driver.SingletonDriver;
+import org.openqa.selenium.JavascriptExecutor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -20,9 +21,9 @@ public class SingleTest2 extends BaseTest{
     public void checkSearchDisplayed(){
         SingletonDriver.getDriver().get("https://www.youtube.com/watch?v=SLe3dhLIHjI");
         Wait.forMillis(4000);
-        watchVideoPage.getVideoCardList();
-        watchVideoPage.getSecondaryColumn().click();
+        System.out.println("getLocation = " + watchVideoPage.getSecondaryColumn().thumbnailImages().getLocation());
+        Assert.assertTrue(watchVideoPage.getSecondaryColumn().thumbnailImages().isDisplayed());
         Wait.forMillis(5000);
-        Assert.assertTrue(page.getLogoIcon().isDisplayed());
+        //Assert.assertTrue(page.getLogoIcon().isDisplayed());
     }
 }
