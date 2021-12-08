@@ -1,68 +1,36 @@
 package utils;
 
+import com.epam.reportportal.testng.ReportPortalTestNGListener;
 import driver.SingletonDriver;
-import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.ITestContext;
-import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import java.io.File;
-import java.io.IOException;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
-
-public class TestListener implements ITestListener {
+public class TestListener extends ReportPortalTestNGListener {
 
     private Logger log = LogManager.getRootLogger();
 
+    @Override
     public void onTestStart(ITestResult iTestResult) {
-
+        super.onTestStart(iTestResult);
+        log.info("TEST " + iTestResult.getName() + " STARTED SUCCESSFULLY");
     }
 
+    @Override
     public void onTestSuccess(ITestResult iTestResult) {
-
+        log.info("TEST " + iTestResult.getName() + " PASSED SUCCESSFULLY");
+        super.onTestSuccess(iTestResult);
     }
 
-    public void onTestFailure(ITestResult iTestResult) {
-        saveScreenshot();
-    }
-
-    public void onTestSkipped(ITestResult iTestResult) {
-
-    }
-
-    public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
-
-    }
-
-    public void onStart(ITestContext iTestContext) {
-
-    }
-
-    public void onFinish(ITestContext iTestContext) {
-
-    }
-
-    private void saveScreenshot(){
-        File screenCapture = ((TakesScreenshot) SingletonDriver
-                .getDriver())
-                .getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(screenCapture, new File(
-                    ".//target/screenshots/"
-                            + getCurrentTimeAsString() +
-                            ".png"));
-        } catch (IOException e) {
-            log.error("Failed to save screenshot: " + e.getLocalizedMessage());
-        }
-    }
-
-    private String getCurrentTimeAsString(){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern( "uuuu-MM-dd_HH-mm-ss" );
-        return ZonedDateTime.now().format(formatter);
+    @Override
+    public void onTestFailure(ITestResult testResult) {
+        log.warn("RP_MESSAGE#BASE64#{}#{}",
+                ((TakesScreenshot) SingletonDriver
+                        .getDriver())
+                        .getScreenshotAs(OutputType.BASE64),
+                "TEST " + testResult.getName() + " FAILED");
+        super.onTestFailure(testResult);
     }
 }

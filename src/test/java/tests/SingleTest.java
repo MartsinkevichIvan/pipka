@@ -18,4 +18,10 @@ public class SingleTest extends BaseTest{
         Wait.forMillis(3000);
         Assert.assertTrue(page.getSearchBlock().getLogoIcon().isDisplayed());
     }
+
+    @Test
+    public void testShouldFail(){
+        SingletonDriver.getDriver().get("https://www.youtube.com/");
+        Assert.fail();
+    }
 }
