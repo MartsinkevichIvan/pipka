@@ -35,9 +35,45 @@ public class WatchVideoPageSecondaryColumn {
     public WebElement getAddToQueueLink(){
         return getSelf().findElement(By.xpath(".//tp-yt-paper-item[@class='style-scope ytd-menu-service-item-renderer']"));
     }
+
+    /*
+    Playlist box in the secondary column
+     */
     public WebElement getPlaylistMainModal(){
-        return getSelf().findElement(By.xpath(".//tp-yt-paper-item[@class='style-scope ytd-menu-service-item-renderer']"));
+        return getSelf().findElement(By.xpath(".//ytd-playlist-panel-renderer[@id='playlist']"));
     }
+    public WebElement getRemoveALLItemsFromPlaylist(){
+        return getSelf().findElement(By.xpath(".//div[@id='end-actions']"));
+    }
+    //all items
+    public WebElement getPlaylistBoxItems(){
+        return getSelf().findElement(By.xpath(".//div[@id='items' and @class='playlist-items style-scope ytd-playlist-panel-renderer']"));
+    }
+    //specific item
+    public WebElement getPlaylistBoxItem(){
+        return getSelf().findElement(By.xpath(".//ytd-playlist-panel-video-renderer[@id='playlist-items']"));
+    }
+    public WebElement getPlaylistBoxItemThumbnail(){
+        return getSelf().findElement(By.xpath(".//a[@id='thumbnail']"));
+    }
+    public WebElement getPlaylistBoxItemVideoTitle(){
+        return getSelf().findElement(By.xpath(".//span[@id='video-title']"));
+    }
+    public WebElement getPlaylistItemAuthor(){
+        return getSelf().findElement(By.xpath(".//span[@id='byline']"));
+    }
+
+
+    /*
+    Dialog Popup container
+     */
+    public WebElement getPopupContainer(){
+        return getSelf().findElement(By.xpath(".//tp-yt-paper-dialog[@class='style-scope ytd-popup-container']"));
+    }
+    public WebElement getPopupContainerDismissButton(){
+        return getSelf().findElement(By.xpath(".//ytd-button-renderer[@id='dismiss-button']"));
+    }
+
 
 
 

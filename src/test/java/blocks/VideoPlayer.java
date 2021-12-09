@@ -57,6 +57,18 @@ public class VideoPlayer {
 
 
     /*
+    Advertizing video
+     */
+    @FindBy(xpath = "//div[@class='video-ads ytp-ad-module']")
+    private WebElement playerAdsModuleFullScreen;
+    @FindBy(xpath = "//div[@class='ytp-ad-image-overlay']")
+    private WebElement playerAdsOverlayBanner;
+    @FindBy(xpath = "//div[@class='ytp-ad-image-overlay']/descendant::button[@class='ytp-ad-overlay-close-button']")
+    private WebElement playerAdsOverlayBannerCloseButton;
+
+
+
+    /*
     Player subtitles settings
      */
     @FindBy(xpath = "//div[@class='ytp-menuitem-label']//span[contains(text(),'Субтитры')]")
@@ -145,5 +157,36 @@ public class VideoPlayer {
                 .collect(Collectors.toList());
         Assert.assertTrue(VideoPlayer.PlayerQuality.getTexts().containsAll(texts));
     }
+
+
+    /*
+    Context menu items
+    */
+    @FindBy(xpath = "//div[@class='ytp-popup ytp-contextmenu']")
+    private WebElement playerContextMenu;//useless element, remove?
+    @FindBy(xpath = "//div[@class='ytp-popup ytp-contextmenu']//div[@class='ytp-menuitem-label']")
+    private List<WebElement> playerContextMenuItemsList;
+    @Getter
+    public enum PlayerContextMenuItems{
+        REPEAT("Повтор"),
+        COPY_URL("Копировать URL видео"),
+        COPY_URL_AT_CURRENT_TIME("Копировать URL видео с привязкой ко времени"),
+        COPY_EMBED_CODE("Копировать HTML-код"),
+        COPY_DEBUG_INFO("Скопировать данные для отладки"),
+        PLAYBACK_ISSUE("Решить проблему с воспроизведением"),
+        STATS("Статистика для сисадминов");
+        String itemText;
+        PlayerContextMenuItems(String item){
+            this.itemText = item;
+        }
+        public static List<String> getTexts(){
+            return Arrays.stream(values())
+                    .map(PlayerContextMenuItems::getItemText)
+                    .collect(Collectors.toList());
+        }
+    }
+
+
+
 
 }

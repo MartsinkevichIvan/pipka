@@ -31,7 +31,7 @@ public class SingleTest2 extends BaseTest{
         Wait.forMillis(4000);
         watchVideoPage.getVideoPlayer().getPlayerSettingsButton().click();
         Wait.forMillis(500);
-        watchVideoPage.getVideoPlayer().getPlayerSubtitlesSettings().click();
+        watchVideoPage.getVideoPlayer().getPlayerContextMenu().click();
         Wait.forMillis(500);
         var texts = watchVideoPage.getVideoPlayer().getPlayerSubtitlesList().stream()
                 .map(WebElement::getText)

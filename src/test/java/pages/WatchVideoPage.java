@@ -20,7 +20,7 @@ public class WatchVideoPage extends AbstractPage {
 
 
     @Autowired
-    WatchVideoPageSecondaryColumn secondaryColumn;
+    WatchVideoPageSecondaryColumn WatchVideoPageSecondaryColumn;
     @Autowired
     VideoPlayer videoPlayer;
 
@@ -52,6 +52,7 @@ public class WatchVideoPage extends AbstractPage {
     @FindBy(xpath = "//span[@class='style-scope yt-formatted-string']/ancestor::h2")
     //or h2[@class='style-scope ytd-comments-header-renderer']
     private WebElement commentariesCounter;
+
 
 
 
