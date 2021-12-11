@@ -65,6 +65,8 @@ public class VideoPlayer {
     private WebElement playerAdsOverlayBanner;
     @FindBy(xpath = "//div[@class='ytp-ad-image-overlay']/descendant::button[@class='ytp-ad-overlay-close-button']")
     private WebElement playerAdsOverlayBannerCloseButton;
+    @FindBy(xpath = "//button[@class='ytp-ad-skip-button ytp-button']")
+    private WebElement playerSkipAds;
 
 
 
@@ -107,14 +109,7 @@ public class VideoPlayer {
             return Arrays.stream(values()).map(PlayerSpeed::getSpeedText).collect(Collectors.toList());
         }
     }
-    public void clickOnSpeed(PlayerSpeed speed){
-        var element = getPlayerSpeed().stream().filter(i->i.getText().equals(speed.getSpeedText())).findFirst();
-        element.ifPresent(WebElement::click);
-    }
-    public void checkTexts(){
-        var texts = getPlayerSpeed().stream().map(WebElement::getText).collect(Collectors.toList());
-        Assert.assertTrue(PlayerSpeed.getTexts().containsAll(texts));
-    }
+
 
 
 
@@ -146,21 +141,10 @@ public class VideoPlayer {
                     .collect(Collectors.toList());
         }
     }
-    public void clickOnQuality(PlayerQuality quality){
-        var element = getPlayerQuality().stream().filter(i->i.getText().equals(quality.getQualityText())).findFirst();
-        element.ifPresent(WebElement::click);
-    }
-    public void checkTextsQuality(){
-        var texts = getPlayerQuality().stream()
-                .map(WebElement::getText)
-                .map(s->s.split(" ")[0])
-                .collect(Collectors.toList());
-        Assert.assertTrue(VideoPlayer.PlayerQuality.getTexts().containsAll(texts));
-    }
 
 
     /*
-    Context menu items
+    Player context menu items
     */
     @FindBy(xpath = "//div[@class='ytp-popup ytp-contextmenu']")
     private WebElement playerContextMenu;//useless element, remove?
