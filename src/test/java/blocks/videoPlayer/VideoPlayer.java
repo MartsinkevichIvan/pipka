@@ -1,4 +1,4 @@
-package blocks;
+package blocks.videoPlayer;
 
 import driver.SingletonDriver;
 import lombok.Getter;

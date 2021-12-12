@@ -1,12 +1,8 @@
 package tests;
 
-import blocks.VideoPlayer;
+import blocks.videoPlayer.VideoPlayer;
 import driver.SingletonDriver;
-import lombok.extern.slf4j.Slf4j;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindAll;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,7 +10,6 @@ import pages.MainPage;
 import pages.WatchVideoPage;
 import utils.Wait;
 
-import java.util.List;
 import java.util.stream.Collectors;
 
 @Test
