@@ -4,9 +4,7 @@ import driver.SingletonDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Listeners;
+import org.testng.annotations.*;
 import pages.MainPage;
 import service.UrlDataReader;
 import spring.SpringConfig;
@@ -20,12 +18,12 @@ public class BaseTest extends AbstractTestNGSpringContextTests implements UrlDat
     @Autowired
     MainPage page;
 
-    @BeforeSuite(alwaysRun = true)
+    @BeforeTest(alwaysRun = true)
     public void configurePage(){
-        SingletonDriver.getDriver().get(UrlDataReader.getUrl("youTubeUrls", "main"));
+        SingletonDriver.getDriver().get(getUrl(MAIN));
     }
 
-    @AfterSuite(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void configureSuite(){
         SingletonDriver.closeDriver();
     }
