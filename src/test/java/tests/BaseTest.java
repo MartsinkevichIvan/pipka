@@ -9,9 +9,9 @@ import spring.SpringConfig;
 @ContextConfiguration(classes = SpringConfig.class)
 public class BaseTest extends AbstractTestNGSpringContextTests{
 
-//    @AfterSuite(alwaysRun = true)
-//    public void configureSuite(){
-//        SingletonDriver.closeDriver();
-//    }
+    @AfterSuite(alwaysRun = true)
+    public void configureSuite(){
+        SingletonDriver.closeDriver();
+    }
 
 }
