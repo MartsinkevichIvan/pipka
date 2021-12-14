@@ -1,20 +1,19 @@
 package blocks;
 
-import blocks.checkers.checkCommonElements;
-import driver.SingletonDriver;
 import lombok.Getter;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.springframework.beans.factory.annotation.Autowired;
 import spring.annotations.Block;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 @Block
 @Getter
-public class HeaderBlock implements checkCommonElements {
+public class HeaderBlock {
 
     @Autowired
     SearchBlock searchBlock;
@@ -37,10 +36,46 @@ public class HeaderBlock implements checkCommonElements {
     @FindBy(xpath = "//ytd-topbar-menu-button-renderer//button[@aria-label='Приложения YouTube']")
     private WebElement dropDownAppsYoutube;
 
-    @Override
-    public List<WebElement> getCommonWebElementsOfBlock() {
-        return SingletonDriver.getDriver().findElements(By.xpath(".//ytd-compact-link-renderer"));
+    /*
+    choose settings by text
+     */
+    @FindBy (xpath = "//ytd-multi-page-menu-renderer[@menu-style='multi-page-menu-style-type-system']" +
+            "//ytd-compact-link-renderer")
+    private List<WebElement> settingsYoutube;
+
+    public enum YoutubeSettings implements Supplier<String> {
+
+        THEME_SIMILAR_TO_PHONE("Тема: как на устройстве"),
+        LANGUAGE("Язык:Русский"),
+        COUNTRY("\nСтрана:\n  Беларусь"),
+        SETTINGS("Настройки"),
+        OWN_DATA("Личные данные на YouTube"),
+        REFERENCE("Справка"),
+        FEEDBACK("Отправить отзыв"),
+        HOT_KEYS("Быстрые клавиши"),
+        SAFE_MODE("Безопасный режим: откл.");
+
+        private String value;
+
+        YoutubeSettings(String value) {
+            this.value = value;
+        }
+
+        public String get() {
+            return value;
+        }
+
+        public static List<String> getTexts(){
+            return Arrays.stream(values()).map(YoutubeSettings::get).collect(Collectors.toList());
+        }
     }
+
+    /*
+    choose youtubeApps by text
+     */
+    @FindBy (xpath = "//ytd-multi-page-menu-renderer[@menu-style='multi-page-menu-style-type-yt-apps']" +
+            "//ytd-compact-link-renderer")
+    private List<WebElement> youtubeApps;
 
     public enum YoutubeApps implements Supplier<String> {
 
@@ -55,9 +90,12 @@ public class HeaderBlock implements checkCommonElements {
             this.value = value;
         }
 
-        @Override
         public String get() {
             return value;
+        }
+
+        public static List<String> getTexts(){
+            return Arrays.stream(values()).map(YoutubeApps::get).collect(Collectors.toList());
         }
     }
 }

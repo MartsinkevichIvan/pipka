@@ -1,18 +1,18 @@
 package blocks;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
-import blocks.checkers.checkCommonElements;
 import lombok.Getter;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import spring.annotations.Block;
 
 @Block
 @Getter
-public class FilterBlock implements checkCommonElements {
+public class FilterBlock {
 
     @FindBy(xpath = "//ytd-feed-filter-chip-bar-renderer[@class='style-scope ytd-rich-grid-renderer']")
     WebElement self;
@@ -23,10 +23,9 @@ public class FilterBlock implements checkCommonElements {
     @FindBy (xpath = "//div[@id='left-arrow-button']//button[@id='button']")
     private WebElement btnScrollLeft;
 
-    public List<WebElement> getCommonWebElementsOfBlock(){
-        return self.findElements
-                (By.xpath(".//iron-selector/yt-chip-cloud-chip-renderer/yt-formatted-string"));
-    }
+    @FindBy (xpath = "//ytd-feed-filter-chip-bar-renderer[@class='style-scope ytd-rich-grid-renderer']" +
+            "//iron-selector/yt-chip-cloud-chip-renderer/yt-formatted-string" )
+    private List<WebElement> filters;
 
     public enum Filters implements Supplier<String> {
 
@@ -59,6 +58,10 @@ public class FilterBlock implements checkCommonElements {
         @Override
         public String get() {
             return value;
+        }
+
+        public static List<String> getTexts(){
+            return Arrays.stream(values()).map(Filters::get).collect(Collectors.toList());
         }
     }
 }
