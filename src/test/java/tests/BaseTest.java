@@ -13,7 +13,6 @@ import utils.TestListener;
 @Listeners(TestListener.class)
 @ContextConfiguration(classes = SpringConfig.class)
 public class BaseTest extends AbstractTestNGSpringContextTests implements PropertyDataReader {
-    protected final int WAITING_TIME = 10;
 
     @Autowired
     MainPage page;

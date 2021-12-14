@@ -1,7 +1,14 @@
 package utils;
 
+import driver.SingletonDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import javax.annotation.CheckReturnValue;
 import javax.annotation.ParametersAreNonnullByDefault;
+
+import java.time.Duration;
 
 import static java.lang.System.nanoTime;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
@@ -10,6 +17,7 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 public class Wait{
     private final long startTimeNano;
     private final long timeoutNano;
+    private static final int EXPLICIT_WAIT_TIMEOUT = 10;
 
     public Wait(long timeoutMs){
         startTimeNano = nanoTime();
@@ -42,5 +50,14 @@ public class Wait{
         do{
             stopwatch.sleep(milliseconds);
         }while(!stopwatch.isTimeoutReached());
+    }
+
+    public static WebElement waitForVisibilityOfElement(WebElement webElement){
+        return new WebDriverWait(SingletonDriver.getDriver(), Duration.ofSeconds(EXPLICIT_WAIT_TIMEOUT))
+                .until(ExpectedConditions.visibilityOf(webElement));
+    }
+    public static WebElement waitForElementToBeClickable(WebElement webElement){
+        return new WebDriverWait(SingletonDriver.getDriver(), Duration.ofSeconds(EXPLICIT_WAIT_TIMEOUT))
+                .until(ExpectedConditions.elementToBeClickable(webElement));
     }
 }
