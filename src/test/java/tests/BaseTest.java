@@ -6,13 +6,13 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.*;
 import pages.MainPage;
-import service.UrlDataReader;
+import service.PropertyDataReader;
 import spring.SpringConfig;
 import utils.TestListener;
 
 @Listeners(TestListener.class)
 @ContextConfiguration(classes = SpringConfig.class)
-public class BaseTest extends AbstractTestNGSpringContextTests implements UrlDataReader {
+public class BaseTest extends AbstractTestNGSpringContextTests implements PropertyDataReader {
     protected final int WAITING_TIME = 10;
 
     @Autowired

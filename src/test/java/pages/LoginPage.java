@@ -11,6 +11,11 @@ public class LoginPage extends AbstractPage{
     @FindBy(xpath = "//input[@type='email']")
     WebElement emailInput;
 
-    @FindBy(xpath = "//div[@id='identifierNext']")
+    @FindBy(xpath = "//input[@type='password']")
+    WebElement passwordInput;
+
+    @FindBy(xpath = "//span[text()='Далее']")
     WebElement nextButton;
+
+
 }
