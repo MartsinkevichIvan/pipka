@@ -12,7 +12,7 @@ public class SingleTest extends BaseTest{
 
     @Test
     public void checkSearchDisplayed(){
-        Assert.assertTrue(page.getSearchBlock().getLogoIcon().isDisplayed());
+        Assert.assertTrue(page.getHeaderBlock().getSearchBlock().getSearchField().isDisplayed());
     }
 
     @Test
