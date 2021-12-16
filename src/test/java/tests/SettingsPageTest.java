@@ -24,9 +24,9 @@ public class SettingsPageTest extends BaseTest{
         loginPage.getNextButton().click();
         waitForVisibilityOfElement(loginPage.getPasswordInput()).sendKeys(getUserCredentials("password"));
         loginPage.getNextButton().click();
-        settingsPage.getSettingsBlock().getSetting(SettingsBlock.Settings.NOTIFICATIONS).click();
+        settingsPage.getSettingsBlock().getSetting(SettingsBlock.SettingsValues.NOTIFICATIONS).click();
         SettingsPageTestUtils
-                .turnOffToggles(settingsPage.getNotificationSettingSubPage().getNotificationSettingsToggles());
+                .turnOffToggles(settingsPage.getNotificationSettingSubPage().getCommonNotificationSettingsToggles());
 
         SettingsPageTestUtils
                 .turnOffToggles(settingsPage.getNotificationSettingSubPage().getEmailNotificationToggles());
@@ -40,7 +40,7 @@ public class SettingsPageTest extends BaseTest{
         loginPage.getNextButton().click();
         waitForVisibilityOfElement(loginPage.getPasswordInput()).sendKeys(getUserCredentials("password"));
         loginPage.getNextButton().click();
-        for (WebElement element : settingsPage.getSettingsBlock().getMenuSection()){
+        for (WebElement element : settingsPage.getSettingsBlock().getMenuSections()){
             element.click();
             Wait.forMillis(1000);
         }

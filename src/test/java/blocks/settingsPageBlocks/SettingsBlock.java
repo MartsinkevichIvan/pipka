@@ -1,6 +1,5 @@
 package blocks.settingsPageBlocks;
 
-import blocks.videoPlayer.VideoPlayer;
 import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -9,10 +8,7 @@ import spring.annotations.Block;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
-
-import static java.lang.String.format;
 
 @Block
 @Getter
@@ -33,31 +29,33 @@ public class SettingsBlock {
 //    }
 
     @FindBy(xpath = "//ytd-compact-link-renderer")
-    private List<WebElement> menuSection;
+    private List<WebElement> menuSections;
 
-    public WebElement getSetting(Settings setting){
-        return menuSection.stream().filter(webElement -> setting.getSetting().equals(webElement.getText())).findFirst().get();
+    public WebElement getSetting(SettingsValues setting){
+        return menuSections.stream()
+                .filter(webElement -> setting.getValue().equals(webElement.getText()))
+                .findFirst().get();
     }
 
     @Getter
-    public enum Settings{
+    public enum SettingsValues {
         ACCOUNT("Аккаунт"),
         NOTIFICATIONS("Уведомления"),
         PLAYBACK("Воспроизведение"),
         PRIVACY("Конфиденциальность"),
-        SHARING("Связанные приложения"),
+        CONNECTED_APPS("Связанные приложения"),
         BILLING("Расчеты и платежи"),
         ADVANCED("Расширенные настройки");
 
-        private String setting;
+        private final String value;
 
-        Settings(String setting){
-            this.setting = setting;
+        SettingsValues(String value){
+            this.value = value;
         }
 
         public static List<String> getSettingsStringList(){
             return Arrays.stream(values())
-                    .map(Settings::getSetting)
+                    .map(SettingsValues::getValue)
                     .collect(Collectors.toList());
         }
     }
