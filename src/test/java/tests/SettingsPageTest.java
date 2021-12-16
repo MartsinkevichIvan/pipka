@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.SettingsPage;
+import utils.SettingsPageTestUtils;
 import utils.Wait;
 
 import static utils.Wait.waitForVisibilityOfElement;
@@ -24,13 +25,11 @@ public class SettingsPageTest extends BaseTest{
         waitForVisibilityOfElement(loginPage.getPasswordInput()).sendKeys(getUserCredentials("password"));
         loginPage.getNextButton().click();
         settingsPage.getSettingsBlock().getSetting(SettingsBlock.Settings.NOTIFICATIONS).click();
-        for (WebElement element : settingsPage.getNotificationSettingSubPage().getNotificationSettingsToggles()){
-            log.info("Toggle " + element.getAttribute("aria-label") + " pressed??? == " + element.getAttribute("aria-pressed"));
-            if ("true".equals(element.getAttribute("aria-pressed"))){
-                waitForVisibilityOfElement(element).click();
-                log.info("Toggle " + element.getAttribute("aria-label") + " clicked");
-            }
-        }
+        SettingsPageTestUtils
+                .turnOffToggles(settingsPage.getNotificationSettingSubPage().getNotificationSettingsToggles());
+
+        SettingsPageTestUtils
+                .turnOffToggles(settingsPage.getNotificationSettingSubPage().getEmailNotificationToggles());
         Wait.forMillis(3000);
     }
 
