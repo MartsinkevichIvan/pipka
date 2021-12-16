@@ -1,6 +1,8 @@
 package tests;
 
 import driver.SingletonDriver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
@@ -13,7 +15,7 @@ import utils.TestListener;
 @Listeners(TestListener.class)
 @ContextConfiguration(classes = SpringConfig.class)
 public class BaseTest extends AbstractTestNGSpringContextTests implements PropertyDataReader {
-
+    protected Logger log = LogManager.getRootLogger();
     @Autowired
     MainPage page;
 
