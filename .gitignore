@@ -1,6 +1,0 @@
-.idea
-.gitignore
-/.idea/
-/target/
-/EPM_PROJECT.iml
-/src/test/java/tests/SingleTest2.java

@@ -3,17 +3,25 @@ package blocks;
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.AbstractPage;
 import spring.annotations.Block;
-import spring.annotations.PageObject;
 
 @Block
 @Getter
-public class SearchBlock{
-    @FindBy(id = "search")
+public class SearchBlock {
+
+    @FindBy (id = "center")
     private WebElement self;
 
-    @FindBy(id = "logo-icon")
-    private WebElement logoIcon;
+    @FindBy(xpath = "//input[@id='search']")
+    private WebElement searchField;
+
+    @FindBy(xpath = "//a[@class='gsst_a']")
+    private WebElement btnOpenVirtualKeyword;
+
+    @FindBy(id = "search-icon-legacy")
+    private WebElement btnSearch;
+
+    @FindBy (id = "voice-search-button")
+    protected WebElement btnVoiceSearch;
 
 }
