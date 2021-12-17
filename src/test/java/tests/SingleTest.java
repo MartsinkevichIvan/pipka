@@ -1,11 +1,9 @@
 package tests;
 
-import driver.SingletonDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
-import utils.Wait;
 
 @Test
 public class SingleTest extends BaseTest{
@@ -14,8 +12,11 @@ public class SingleTest extends BaseTest{
 
     @Test
     public void checkSearchDisplayed(){
-        SingletonDriver.getDriver().get("https://www.youtube.com/");
-        Wait.forMillis(3000);
-        Assert.assertTrue(page.getSearchBlock().getLogoIcon().isDisplayed());
+        Assert.assertTrue(page.getHeaderBlock().getSearchBlock().getSearchField().isDisplayed());
+    }
+
+    @Test
+    public void testShouldFail(){
+        Assert.fail();
     }
 }
