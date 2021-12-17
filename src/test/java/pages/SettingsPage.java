@@ -39,8 +39,6 @@ public class SettingsPage extends AbstractPage {
     @Lazy
     AdvancedSettingsSubPage advancedSettingsSubPage;
 
-
-
     @PageObject
     @Getter
     public static class AccountSettingSubPage {
@@ -71,7 +69,7 @@ public class SettingsPage extends AbstractPage {
         @FindBy(xpath = "//*[contains(text(), 'emails_from_youtube')]")
         private WebElement notificationLanguageSelection;
 
-        public WebElement getCommonNotificationSetting(CommonNotificationSettingsValues setting){
+        public WebElement getEmailNotificationSetting(EmailNotificationSettingsValues setting){
             return commonNotificationToggles.stream()
                     .filter(webElement -> setting.getValue().equals(webElement.getAttribute("aria-label")))
                     .findFirst().get();
@@ -96,12 +94,6 @@ public class SettingsPage extends AbstractPage {
                         .map(CommonNotificationSettingsValues::getValue)
                         .collect(Collectors.toList());
             }
-        }
-
-        public WebElement getEmailNotificationSetting(EmailNotificationSettingsValues setting){
-            return commonNotificationToggles.stream()
-                    .filter(webElement -> setting.getValue().equals(webElement.getAttribute("aria-label")))
-                    .findFirst().get();
         }
 
         @Getter
@@ -129,15 +121,14 @@ public class SettingsPage extends AbstractPage {
         @FindBy(xpath = "//tp-yt-paper-checkbox")
         private List<WebElement> playbackSettingsList;
 
+        @FindBy(xpath = "//tp-yt-paper-radio-button")
+        private List<WebElement> playerAV1Settings;
+
         public WebElement getPlaybackSetting(PlaybackSettingsValues setting){
             return playbackSettingsList.stream()
                     .filter(webElement -> setting.getValue().equals(webElement.getAttribute("aria-label")))
                     .findFirst().get();
         }
-
-        @FindBy(xpath = "//tp-yt-paper-radio-button")
-        private List<WebElement> playerAV1Settings;
-
         public WebElement getPlaybackAV1Setting(PlaybackAV1SettingsValues setting){
             return playbackSettingsList.stream()
                     .filter(webElement -> setting.getValue().equals(webElement.getAttribute("aria-label")))
@@ -199,7 +190,7 @@ public class SettingsPage extends AbstractPage {
 
         @FindBy(xpath = "//a[contains(@href, 'families/answer')]")
         private WebElement googleAccountManagingWithFamilyLink;
-
+//-------------------------------------------------------------------
         public WebElement getPrivacySetting(PrivacySettingsValues setting){
             return privacySettingsList.stream()
                     .filter(webElement -> setting.getValue().equals(webElement.getAttribute("aria-label")))

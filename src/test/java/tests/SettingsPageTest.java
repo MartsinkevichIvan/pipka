@@ -1,5 +1,6 @@
 package tests;
 
+import blocks.navigationSubBlocks.Advanced;
 import blocks.settingsPageBlocks.SettingsBlock;
 import org.openqa.selenium.WebElement;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +20,14 @@ public class SettingsPageTest extends BaseTest{
 
     @Test
     public void NotificationsSettingsAreAvailable(){
-        page.getSettings().click();
+        page.switchToNavigationBlock().getAdvanced().getSettingElement(Advanced.MainValuesEnum.SETTINGS).click();
         waitForVisibilityOfElement(loginPage.getEmailInput()).sendKeys(getUserCredentials("email"));
         loginPage.getNextButton().click();
         waitForVisibilityOfElement(loginPage.getPasswordInput()).sendKeys(getUserCredentials("password"));
         loginPage.getNextButton().click();
         settingsPage.getSettingsBlock().getSetting(SettingsBlock.SettingsValues.NOTIFICATIONS).click();
         SettingsPageTestUtils
-                .turnOffToggles(settingsPage.getNotificationSettingSubPage().getCommonNotificationSettingsToggles());
+                .turnOffToggles(settingsPage.getNotificationSettingSubPage().getCommonNotificationToggles());
 
         SettingsPageTestUtils
                 .turnOffToggles(settingsPage.getNotificationSettingSubPage().getEmailNotificationToggles());
@@ -35,7 +36,7 @@ public class SettingsPageTest extends BaseTest{
 
     @Test
     public void allSettingsAreAvailable(){
-        page.getSettings().click();
+        page.switchToNavigationBlock().getAdvanced().getSettingElement(Advanced.MainValuesEnum.SETTINGS).click();
         waitForVisibilityOfElement(loginPage.getEmailInput()).sendKeys(getUserCredentials("email"));
         loginPage.getNextButton().click();
         waitForVisibilityOfElement(loginPage.getPasswordInput()).sendKeys(getUserCredentials("password"));

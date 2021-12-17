@@ -31,15 +31,17 @@ public class MainPage extends AbstractPage {
     @Autowired
     AlertBlock alertBlock;
 
-    public void switchToMiniNavigationBlock() {
+    public MiniNavigationBlock switchToMiniNavigationBlock() {
         if (!miniNavigationBlock.blockIsDisplayed()) {
             headerBlock.getBtnGuide().click();
         }
+        return getMiniNavigationBlock();
     }
 
-    public void switchToNavigationBlock() {
+    public NavigationBlock switchToNavigationBlock() {
         if (!navigationBlock.getSelf().isDisplayed()) {
             headerBlock.getBtnGuide().click();
         }
+        return getNavigationBlock();
     }
 }

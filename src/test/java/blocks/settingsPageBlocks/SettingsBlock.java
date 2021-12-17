@@ -21,13 +21,6 @@ public class SettingsBlock {
         return getSelf().findElement(By.xpath("//div[text()='Настройки']"));
     }
 
-//----------------------Using pattern ---------------------------------
-//    private static final String MENU_SETTINGS_PATTERN =  "//yt-formatted-string[contains(text(), '%s')]/../../..";
-//    public WebElement getSetting(Settings setting){
-//        return getSelf()
-//                .findElement(By.xpath(format(MENU_SETTINGS_PATTERN, setting.getSetting())));
-//    }
-
     @FindBy(xpath = "//ytd-compact-link-renderer")
     private List<WebElement> menuSections;
 

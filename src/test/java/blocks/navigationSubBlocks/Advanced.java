@@ -1,10 +1,9 @@
 package blocks.navigationSubBlocks;
 
-import blocks.HeaderBlock;
-import blocks.checkers.checkCommonElements;
-import org.openqa.selenium.By;
+import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import service.WebElementService;
 import spring.annotations.Block;
 
 import java.util.Arrays;
@@ -13,13 +12,20 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 @Block
-public class Advanced {
+@Getter
+public class Advanced implements WebElementService {
 
     @FindBy(xpath = "//yt-formatted-string[text()='Настройки']//ancestor::ytd-guide-section-renderer")
     private WebElement self;
 
     @FindBy(xpath = "//yt-formatted-string[text()='Настройки']//ancestor::ytd-guide-section-renderer//a")
     private List<WebElement> elementsOfAdvanced;
+
+    public WebElement getSettingElement(MainValuesEnum element){
+        return elementsOfAdvanced.stream()
+                .filter(webElement -> element.get().equals(webElement.getAttribute("title")))
+                .findFirst().get();
+    }
 
     public enum MainValuesEnum implements Supplier<String> {
 
