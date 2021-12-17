@@ -3,7 +3,6 @@ package blocks.navigationSubBlocks;
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import service.WebElementService;
 import spring.annotations.Block;
 
 import java.util.Arrays;
@@ -13,7 +12,7 @@ import java.util.stream.Collectors;
 
 @Block
 @Getter
-public class Advanced implements WebElementService {
+public class Advanced{
 
     @FindBy(xpath = "//yt-formatted-string[text()='Настройки']//ancestor::ytd-guide-section-renderer")
     private WebElement self;
