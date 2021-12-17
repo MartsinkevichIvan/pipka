@@ -1,7 +1,9 @@
 package pages;
 
+import blocks.elements.ListOfToogle;
 import blocks.settingsPageBlocks.SettingsBlock;
 import lombok.Getter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +12,12 @@ import spring.annotations.PageObject;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 @PageObject
 @Getter
-public class SettingsPage extends AbstractPage {
+public class SettingsPage extends AbstractPage{
     @Autowired
     SettingsBlock settingsBlock;
     @Autowired
@@ -41,7 +44,7 @@ public class SettingsPage extends AbstractPage {
 
     @PageObject
     @Getter
-    public static class AccountSettingSubPage {
+    public static class AccountSettingSubPage{
         @FindBy(xpath = "//a[text()='Создать канал']")
         private WebElement createChannelLink;
 
@@ -54,9 +57,12 @@ public class SettingsPage extends AbstractPage {
 
     @PageObject
     @Getter
-    public static class NotificationSettingSubPage {
-        @FindBy(xpath = "//*[text()='Общие']/ancestor::ytd-item-section-renderer//*[@id='toggle']")
-        private List<WebElement> commonNotificationToggles;
+    public static class NotificationSettingSubPage{
+        //        @FindBy(xpath = "//*[text()='Общие']/ancestor::ytd-item-section-renderer//*[@id='toggle']")
+        //        private List<WebElement> commonNotificationToggles;
+        private final ListOfToogle<CommonNotificationSettingsValues> commonNotificationToggles = new ListOfToogle<>(
+                By.xpath("//*[text()='Общие']/ancestor::ytd-item-section-renderer//*[@id='toggle']"));
+
         @FindBy(xpath = "//*[text()='Уведомления по электронной почте']/ancestor::ytd-item-section-renderer//*[@id='toggle']")
         private List<WebElement> emailNotificationToggles;
 
@@ -69,14 +75,12 @@ public class SettingsPage extends AbstractPage {
         @FindBy(xpath = "//*[contains(text(), 'emails_from_youtube')]")
         private WebElement notificationLanguageSelection;
 
-        public WebElement getEmailNotificationSetting(EmailNotificationSettingsValues setting){
-            return commonNotificationToggles.stream()
-                    .filter(webElement -> setting.getValue().equals(webElement.getAttribute("aria-label")))
-                    .findFirst().get();
-        }
+        //        public WebElement getEmailNotificationSetting(EmailNotificationSettingsValues setting){
+        //            return commonNotificationToggles.stream().filter(webElement -> setting.getValue().equals(webElement.getAttribute("aria-label"))).findFirst().get();
+        //        }
 
         @Getter
-        public enum CommonNotificationSettingsValues {
+        public enum CommonNotificationSettingsValues implements Supplier<String>{
             BROWSER_NOTIFICATIONS("Уведомления в браузере"),
             SUBSCRIPTIONS("Подписки"),
             RECOMMENDED_VIDEO("Рекомендованные видео"),
@@ -86,13 +90,17 @@ public class SettingsPage extends AbstractPage {
             MENTIONS("Упоминания"),
             CONTENT_SHARING("Записи с моим контентом на других каналах");
             private String value;
+
             CommonNotificationSettingsValues(String value){
                 this.value = value;
             }
+
+            public String get(){
+                return value;
+            }
+
             public static List<String> getSettingsStringList(){
-                return Arrays.stream(values())
-                        .map(CommonNotificationSettingsValues::getValue)
-                        .collect(Collectors.toList());
+                return Arrays.stream(values()).map(CommonNotificationSettingsValues::getValue).collect(Collectors.toList());
             }
         }
 
@@ -104,20 +112,20 @@ public class SettingsPage extends AbstractPage {
             YOUTUBE_PREMIUM_NEWS("Новости YouTube Premium"),
             AUTHOR_NEWS("Новости для авторов");
             private String value;
+
             EmailNotificationSettingsValues(String value){
                 this.value = value;
             }
+
             public static List<String> getSettingsStringList(){
-                return Arrays.stream(values())
-                        .map(EmailNotificationSettingsValues::getValue)
-                        .collect(Collectors.toList());
+                return Arrays.stream(values()).map(EmailNotificationSettingsValues::getValue).collect(Collectors.toList());
             }
         }
     }
 
     @PageObject
     @Getter
-    public static class PlaybackSettingSubPage {
+    public static class PlaybackSettingSubPage{
         @FindBy(xpath = "//tp-yt-paper-checkbox")
         private List<WebElement> playbackSettingsList;
 
@@ -125,44 +133,40 @@ public class SettingsPage extends AbstractPage {
         private List<WebElement> playerAV1Settings;
 
         public WebElement getPlaybackSetting(PlaybackSettingsValues setting){
-            return playbackSettingsList.stream()
-                    .filter(webElement -> setting.getValue().equals(webElement.getAttribute("aria-label")))
-                    .findFirst().get();
+            return playbackSettingsList.stream().filter(webElement -> setting.getValue().equals(webElement.getAttribute("aria-label"))).findFirst().get();
         }
+
         public WebElement getPlaybackAV1Setting(PlaybackAV1SettingsValues setting){
-            return playbackSettingsList.stream()
-                    .filter(webElement -> setting.getValue().equals(webElement.getAttribute("aria-label")))
-                    .findFirst().get();
+            return playbackSettingsList.stream().filter(webElement -> setting.getValue().equals(webElement.getAttribute("aria-label"))).findFirst().get();
         }
 
         @Getter
-        public enum PlaybackSettingsValues {
+        public enum PlaybackSettingsValues{
             IN_VIDEO_INFO_CARDS("Показывать в видео подсказки"),
             SUBTITLES_AND_CAPTIONS("Всегда показывать субтитры"),
             INCLUDE_AUTO_GENERATED_CAPTIONS("Показывать автоматически созданные субтитры, если они доступны");
             private String value;
+
             PlaybackSettingsValues(String value){
                 this.value = value;
             }
+
             public static List<String> getSettingsStringList(){
-                return Arrays.stream(values())
-                        .map(PlaybackSettingsValues::getValue)
-                        .collect(Collectors.toList());
+                return Arrays.stream(values()).map(PlaybackSettingsValues::getValue).collect(Collectors.toList());
             }
         }
+
         @Getter
-        public enum PlaybackAV1SettingsValues {
-            AUTO("Автоматически (рекомендовано)"),
-            PREFER_AV1_FOR_SD("Использовать AV1 для SD-контента"),
-            ALWAYS_PREFER_AV1("Всегда использовать AV1");
+        public enum PlaybackAV1SettingsValues{
+            AUTO("Автоматически (рекомендовано)"), PREFER_AV1_FOR_SD("Использовать AV1 для SD-контента"), ALWAYS_PREFER_AV1("Всегда использовать AV1");
             private String value;
+
             PlaybackAV1SettingsValues(String value){
                 this.value = value;
             }
+
             public static List<String> getSettingsStringList(){
-                return Arrays.stream(values())
-                        .map(PlaybackAV1SettingsValues::getValue)
-                        .collect(Collectors.toList());
+                return Arrays.stream(values()).map(PlaybackAV1SettingsValues::getValue).collect(Collectors.toList());
             }
         }
     }
@@ -172,7 +176,7 @@ public class SettingsPage extends AbstractPage {
     public static class PrivacySettingsSubPage{
         @FindBy(xpath = "//tp-yt-paper-toggle-button")
         private List<WebElement> privacySettingsList;
-//---------------Links-----------------------------------------
+        //---------------Links-----------------------------------------
         @FindBy(xpath = "//a[contains(@href, '/terms')]")
         private WebElement termsOfServiceLink;
 
@@ -190,31 +194,30 @@ public class SettingsPage extends AbstractPage {
 
         @FindBy(xpath = "//a[contains(@href, 'families/answer')]")
         private WebElement googleAccountManagingWithFamilyLink;
-//-------------------------------------------------------------------
+
+        //-------------------------------------------------------------------
         public WebElement getPrivacySetting(PrivacySettingsValues setting){
-            return privacySettingsList.stream()
-                    .filter(webElement -> setting.getValue().equals(webElement.getAttribute("aria-label")))
-                    .findFirst().get();
+            return privacySettingsList.stream().filter(webElement -> setting.getValue().equals(webElement.getAttribute("aria-label"))).findFirst().get();
         }
+
         @Getter
         public enum PrivacySettingsValues{
-            KEEP_PLAYLIST_PRIVATE("Не показывать информацию о сохраненных плейлистах"),
-            KEEP_SUBSCRIPTIONS_PRIVATE("Не показывать информацию о моих подписках");
+            KEEP_PLAYLIST_PRIVATE("Не показывать информацию о сохраненных плейлистах"), KEEP_SUBSCRIPTIONS_PRIVATE("Не показывать информацию о моих подписках");
             private String value;
-            PrivacySettingsValues(String value) {
+
+            PrivacySettingsValues(String value){
                 this.value = value;
             }
+
             public static List<String> getSettingsStringList(){
-                return Arrays.stream(values())
-                        .map(PrivacySettingsValues::getValue)
-                        .collect(Collectors.toList());
+                return Arrays.stream(values()).map(PrivacySettingsValues::getValue).collect(Collectors.toList());
             }
         }
     }
 
     @PageObject
     @Getter
-    public static class ConnectedAppsSettingsSubPage {
+    public static class ConnectedAppsSettingsSubPage{
         @FindBy(xpath = "//a[contains(@href, 'myaccount.google.com/accountlinking')]")
         private WebElement connectedAppsFullListLink;
 
@@ -222,9 +225,7 @@ public class SettingsPage extends AbstractPage {
         private List<WebElement> appsList;
 
         public WebElement getAppForConnection(AppsForConnectionValues setting){
-            return appsList.stream()
-                    .filter(webElement -> webElement.getAttribute("aria-label").contains(setting.getValue()))
-                    .findFirst().get();
+            return appsList.stream().filter(webElement -> webElement.getAttribute("aria-label").contains(setting.getValue())).findFirst().get();
         }
 
         @Getter
@@ -243,13 +244,13 @@ public class SettingsPage extends AbstractPage {
             SUPERSELL("Supercell"),
             UBISOFT("Ubisoft");
             private String value;
-            AppsForConnectionValues(String value) {
+
+            AppsForConnectionValues(String value){
                 this.value = value;
             }
+
             public static List<String> getSettingsStringList(){
-                return Arrays.stream(values())
-                        .map(AppsForConnectionValues::getValue)
-                        .collect(Collectors.toList());
+                return Arrays.stream(values()).map(AppsForConnectionValues::getValue).collect(Collectors.toList());
             }
         }
     }

@@ -27,7 +27,6 @@ public class Advanced{
     }
 
     public enum MainValuesEnum implements Supplier<String> {
-
         SETTINGS("Настройки"),
         REPORTS("Жалобы"),
         REFERENCE("Справка"),
