@@ -19,14 +19,18 @@ public class BaseTest extends AbstractTestNGSpringContextTests implements Proper
     @Autowired
     MainPage page;
 
-    @BeforeTest(alwaysRun = true)
+    @BeforeMethod(alwaysRun = true)
     public void configurePage(){
         SingletonDriver.getDriver().get(getUrl(MAIN));
     }
 
     @AfterMethod(alwaysRun = true)
     public void configureSuite(){
-        SingletonDriver.closeDriver();
+        SingletonDriver.deleteCookies();
     }
 
+    @AfterSuite(alwaysRun = true)
+    public void deleteSuite(){
+        SingletonDriver.closeDriver();
+    }
 }
