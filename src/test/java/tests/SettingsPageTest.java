@@ -19,6 +19,7 @@ import pages.SettingsPage.PlaybackSettingSubPage.PlaybackAV1SettingsValues;
 import utils.Wait;
 
 import static utils.Wait.waitForVisibilityOfElement;
+
 @Test
 public class SettingsPageTest extends BaseTest{
     @Autowired
