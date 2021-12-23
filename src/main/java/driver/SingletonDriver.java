@@ -42,4 +42,8 @@ public class SingletonDriver{
         driver.quit();
         driver = null;
     }
+
+    public static void deleteCookies(){
+        driver.manage().deleteAllCookies();
+    }
 }
