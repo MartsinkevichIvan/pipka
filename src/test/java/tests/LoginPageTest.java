@@ -23,6 +23,6 @@ public class LoginPageTest extends BaseTest{
         loginPage.getNextButton().click();
         waitForVisibilityOfElement(loginPage.getPasswordInput()).sendKeys(getUserCredentials("password"));
         loginPage.getNextButton().click();
-        Assert.assertEquals(settingsPage.getSettingsBlock().getTitle().getText(), "НАСТРОЙКИ");
+        Assert.assertTrue(settingsPage.getHeaderBlock().getTopBarButtons().size()>2);
     }
 }

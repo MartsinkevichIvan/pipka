@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.event.annotation.BeforeTestClass;
 import org.springframework.test.context.event.annotation.BeforeTestMethod;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
@@ -40,11 +41,14 @@ public class SettingsPageTest extends BaseTest{
             page.switchToNavigationBlock().getAdvanced().getSettingElement(Advanced.MainValuesEnum.SETTINGS).click();
         }
     }
-    @Test
+    @Test(priority = -1)
     public void allSettingsAreAvailable(){
         for(WebElement element : settingsPage.getSettingsBlock().getMenuSections()){
             element.click();
             Wait.forMillis(1000);
+            String pageTitle = waitForVisibilityOfElement(settingsPage.getSettingTitle()).getText();
+            Assert.assertEquals(pageTitle, element.getText());
+
         }
     }
 

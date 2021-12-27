@@ -1,5 +1,6 @@
 package pages;
 
+import blocks.HeaderBlock;
 import blocks.elements.ListOfCheckbox;
 import blocks.elements.RadioButtonsBlock;
 import blocks.elements.ListOfToggle;
@@ -20,6 +21,8 @@ import java.util.stream.Collectors;
 @PageObject
 @Getter
 public class SettingsPage extends AbstractPage {
+    @Autowired
+    HeaderBlock headerBlock;
     @Autowired
     SettingsBlock settingsBlock;
     @Autowired
@@ -44,9 +47,12 @@ public class SettingsPage extends AbstractPage {
     @Lazy
     AdvancedSettingsSubPage advancedSettingsSubPage;
 
+    @FindBy(xpath = "//div[@id='primary-content']//div[@id='name']")
+    private WebElement settingTitle;
+
     @PageObject
     @Getter
-    public static class AccountSettingSubPage {
+    public static class AccountSettingSubPage{
         @FindBy(xpath = "//a[text()='Создать канал']")
         private WebElement createChannelLink;
 
@@ -59,7 +65,7 @@ public class SettingsPage extends AbstractPage {
 
     @PageObject
     @Getter
-    public static class NotificationSettingSubPage {
+    public static class NotificationSettingSubPage{
 
         private final ListOfToggle<NotificationSettingsValues> notificationToggles = new ListOfToggle<>(
                 By.xpath("//ytd-settings-switch-renderer"));
@@ -97,7 +103,7 @@ public class SettingsPage extends AbstractPage {
 
     @PageObject
     @Getter
-    public static class PlaybackSettingSubPage {
+    public static class PlaybackSettingSubPage{
         private final ListOfCheckbox<PlaybackSettingsValues> playbackCheckboxes = new ListOfCheckbox<>(
                 By.xpath("//ytd-settings-checkbox-renderer"));
 
@@ -149,7 +155,7 @@ public class SettingsPage extends AbstractPage {
 
     @PageObject
     @Getter
-    public static class PrivacySettingsSubPage {
+    public static class PrivacySettingsSubPage{
         private final ListOfToggle<PrivacySettingsValues> privacySettingsToggles = new ListOfToggle<>(
                 By.xpath("//ytd-settings-switch-renderer"));
 
@@ -195,7 +201,7 @@ public class SettingsPage extends AbstractPage {
 
     @PageObject
     @Getter
-    public static class ConnectedAppsSettingsSubPage {
+    public static class ConnectedAppsSettingsSubPage{
         @FindBy(xpath = "//a[contains(@href, 'myaccount.google.com/accountlinking')]")
         private WebElement connectedAppsFullListLink;
 
