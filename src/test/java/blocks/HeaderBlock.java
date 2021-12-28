@@ -30,6 +30,9 @@ public class HeaderBlock {
     @FindBy(xpath = "//ytd-button-renderer[@class='style-scope ytd-masthead style-suggestive size-small']")
     private WebElement btnSignIn;
 
+    @FindBy(xpath = "//ytd-topbar-menu-button-renderer")
+    private List<WebElement> topBarButtons; // if size>2 user is logged in
+
     @FindBy(xpath = "//ytd-topbar-menu-button-renderer//button[@aria-label='Настройки']")
     private WebElement dropDownMenuSettings;
 
