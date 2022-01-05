@@ -26,7 +26,7 @@ public class TestListener extends ReportPortalTestNGListener {
 
     @Override
     public void onTestFailure(ITestResult testResult) {
-        log.warn("RP_MESSAGE#BASE64#{}#{}",
+        log.info("RP_MESSAGE#BASE64#{}#{}",
                 ((TakesScreenshot) SingletonDriver
                         .getDriver())
                         .getScreenshotAs(OutputType.BASE64),
