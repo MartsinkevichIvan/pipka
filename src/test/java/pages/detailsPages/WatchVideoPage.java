@@ -1,19 +1,18 @@
-package pages;
+package pages.detailsPages;
 
-import blocks.videoPlayer.VideoPlayer;
-import blocks.watchVideoPageBlocks.WatchVideoPageCommentaries;
-import blocks.watchVideoPageBlocks.WatchVideoPageSecondaryColumn;
+import blocks.detailsBlocks.VideoPlayer;
+import blocks.detailsBlocks.watchVideoPageBlocks.WatchVideoPageCommentaries;
+import blocks.detailsBlocks.watchVideoPageBlocks.WatchVideoPageSecondaryColumn;
 import lombok.Getter;
-import org.checkerframework.checker.units.qual.A;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.springframework.beans.factory.annotation.Autowired;
+import pages.AbstractPage;
 import spring.annotations.PageObject;
 
 @PageObject
 @Getter
-public class WatchVideoPage extends AbstractPage {
-
+public class WatchVideoPage extends AbstractPage{
 
     @Autowired
     WatchVideoPageSecondaryColumn WatchVideoPageSecondaryColumn;
@@ -27,12 +26,7 @@ public class WatchVideoPage extends AbstractPage {
     WatchVideoPageSecondaryInfoBox secondaryInfoBox;
 
 
-
-
-
-
-
-    public class WatchVideoPagePrimaryInfoBox extends AbstractPage{
+    public static class WatchVideoPagePrimaryInfoBox extends AbstractPage{
         /*
         Video Primary info box
          */
@@ -57,7 +51,7 @@ public class WatchVideoPage extends AbstractPage {
         @FindBy(xpath = "//div[@id='menu-container']/descendant::button[@class='style-scope yt-icon-button'][5]")
         private WebElement infoPrimaryContainerReport;
     }
-    public class WatchVideoPageSecondaryInfoBox extends AbstractPage{
+    public static class WatchVideoPageSecondaryInfoBox extends AbstractPage{
         /*
         Video Author Secondary Info
         */

@@ -1,7 +1,7 @@
-package blocks.watchVideoPageBlocks;
+package blocks.detailsBlocks.watchVideoPageBlocks;
 
-import blocks.watchVideoPageBlocks.secondaryColumnItems.SecondaryColumnPlaylist;
-import blocks.watchVideoPageBlocks.secondaryColumnItems.SecondaryColumnVideoCard;
+import blocks.detailsBlocks.watchVideoPageBlocks.secondaryColumnItems.SecondaryColumnPlaylist;
+import blocks.detailsBlocks.watchVideoPageBlocks.secondaryColumnItems.SecondaryColumnVideoCard;
 import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

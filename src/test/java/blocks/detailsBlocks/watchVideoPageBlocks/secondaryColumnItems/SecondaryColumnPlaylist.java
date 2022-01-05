@@ -1,4 +1,4 @@
-package blocks.watchVideoPageBlocks.secondaryColumnItems;
+package blocks.detailsBlocks.watchVideoPageBlocks.secondaryColumnItems;
 
 import lombok.Getter;
 import org.openqa.selenium.By;

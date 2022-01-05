@@ -14,10 +14,7 @@ public class SingletonDriver{
 
     public static WebDriver getDriver(){
         if(driver == null){
-            if(System.getProperty("browser") == null){
-                System.setProperty("browser", "chrome");
-            }
-            switch(System.getProperty("browser")){
+            switch(System.getProperty("browser", "chrome")){
                 case "firefox":{
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
@@ -32,8 +29,7 @@ public class SingletonDriver{
                 }
             }
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WAITING_TIME));
-            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(WAITING_TIME));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WAITING_TIME)).pageLoadTimeout(Duration.ofSeconds(WAITING_TIME));
         }
         return driver;
     }

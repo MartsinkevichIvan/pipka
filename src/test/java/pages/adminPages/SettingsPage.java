@@ -1,9 +1,9 @@
-package pages;
+package pages.adminPages;
 
-import blocks.HeaderBlock;
-import blocks.elements.ListOfCheckbox;
-import blocks.elements.RadioButtonsBlock;
-import blocks.elements.ListOfToggle;
+import blocks.baseBlocks.HeaderBlock;
+import blocks.baseElements.ListOfCheckbox;
+import blocks.baseElements.RadioButtonsBlock;
+import blocks.baseElements.ListOfToggle;
 import blocks.settingsPageBlocks.SettingsBlock;
 import lombok.Getter;
 import org.openqa.selenium.By;
@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import pages.AbstractPage;
 import spring.annotations.PageObject;
 
 import java.util.Arrays;
@@ -20,7 +21,7 @@ import java.util.stream.Collectors;
 
 @PageObject
 @Getter
-public class SettingsPage extends AbstractPage {
+public class SettingsPage extends AbstractPage{
     @Autowired
     HeaderBlock headerBlock;
     @Autowired
@@ -85,7 +86,7 @@ public class SettingsPage extends AbstractPage {
             YOUTUBE_GENERAL_NEWS("Общие новости YouTube"),
             YOUTUBE_PREMIUM_NEWS("Новости YouTube Premium"),
             AUTHOR_NEWS("Новости для авторов");
-            private String value;
+            private final String value;
 
             NotificationSettingsValues(String value) {
                 this.value = value;
@@ -112,7 +113,7 @@ public class SettingsPage extends AbstractPage {
             IN_VIDEO_INFO_CARDS("Показывать в видео подсказки"),
             SUBTITLES_AND_CAPTIONS("Всегда показывать субтитры"),
             INCLUDE_AUTO_GENERATED_CAPTIONS("Показывать автоматически созданные субтитры, если они доступны");
-            private String value;
+            private final String value;
 
             PlaybackSettingsValues(String value) {
                 this.value = value;
@@ -136,7 +137,7 @@ public class SettingsPage extends AbstractPage {
             AUTO("Автоматически (рекомендовано)"),
             PREFER_AV1_FOR_SD("Использовать AV1 для SD-контента"),
             ALWAYS_PREFER_AV1("Всегда использовать AV1");
-            private String value;
+            private final String value;
 
             PlaybackAV1SettingsValues(String value) {
                 this.value = value;
@@ -182,7 +183,7 @@ public class SettingsPage extends AbstractPage {
         public enum PrivacySettingsValues implements Supplier<String>{
             KEEP_PLAYLIST_PRIVATE("Не показывать информацию о сохраненных плейлистах"),
             KEEP_SUBSCRIPTIONS_PRIVATE("Не показывать информацию о моих подписках");
-            private String value;
+            private final String value;
 
             PrivacySettingsValues(String value) {
                 this.value = value;
@@ -227,7 +228,7 @@ public class SettingsPage extends AbstractPage {
             RIOT_GAMES("Riot Games"),
             SUPERSELL("Supercell"),
             UBISOFT("Ubisoft");
-            private String value;
+            private final String value;
 
             AppsForConnectionValues(String value) {
                 this.value = value;

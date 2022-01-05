@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.ParametersAreNonnullByDefault;
-
 import java.time.Duration;
 
 import static java.lang.System.nanoTime;
@@ -53,11 +52,10 @@ public class Wait{
     }
 
     public static WebElement waitForVisibilityOfElement(WebElement webElement){
-        return new WebDriverWait(SingletonDriver.getDriver(), Duration.ofSeconds(EXPLICIT_WAIT_TIMEOUT))
-                .until(ExpectedConditions.visibilityOf(webElement));
+        return new WebDriverWait(SingletonDriver.getDriver(), Duration.ofSeconds(EXPLICIT_WAIT_TIMEOUT)).until(ExpectedConditions.visibilityOf(webElement));
     }
+
     public static WebElement waitForElementToBeClickable(WebElement webElement){
-        return new WebDriverWait(SingletonDriver.getDriver(), Duration.ofSeconds(EXPLICIT_WAIT_TIMEOUT))
-                .until(ExpectedConditions.elementToBeClickable(webElement));
+        return new WebDriverWait(SingletonDriver.getDriver(), Duration.ofSeconds(EXPLICIT_WAIT_TIMEOUT)).until(ExpectedConditions.elementToBeClickable(webElement));
     }
 }

@@ -1,6 +1,7 @@
 package pages;
 
 import blocks.*;
+import blocks.baseBlocks.*;
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

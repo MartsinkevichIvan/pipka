@@ -1,18 +1,16 @@
-package blocks.elements;
+package blocks.baseElements;
 
-import blocks.elements.checkers.CheckListOfCheckbox;
+import blocks.baseElements.checkers.CheckListOfCheckbox;
 import driver.SingletonDriver;
 import lombok.SneakyThrows;
 import org.openqa.selenium.By;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
 import static java.util.stream.Collectors.toList;
 
 public class ListOfCheckbox<T extends Supplier<String>> implements CheckListOfCheckbox<T> {
-    private List<Checkbox> blocks = new ArrayList<>();
     private final By by;
 
     @SneakyThrows
@@ -23,7 +21,6 @@ public class ListOfCheckbox<T extends Supplier<String>> implements CheckListOfCh
     @SneakyThrows
     public List<Checkbox> getList(){
         var elements = SingletonDriver.getDriver().findElements(by);
-        blocks = elements.stream().map(i -> new Checkbox(i)).collect(toList());
-        return blocks;
+        return elements.stream().map(Checkbox::new).collect(toList());
     }
 }

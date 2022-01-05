@@ -1,6 +1,6 @@
-package blocks.elements.checkers;
+package blocks.baseElements.checkers;
 
-import blocks.elements.Checkbox;
+import blocks.baseElements.Checkbox;
 import org.testng.Assert;
 
 import java.util.Arrays;

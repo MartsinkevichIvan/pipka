@@ -1,8 +1,5 @@
 package blocks.navigationSubBlocks;
 
-import blocks.HeaderBlock;
-import blocks.checkers.checkCommonElements;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import spring.annotations.Block;
@@ -13,7 +10,7 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 @Block
-public class Main {
+public class Main{
 
     @FindBy(xpath = "//yt-formatted-string[text()='Главная']//ancestor::ytd-guide-section-renderer")
     private WebElement self;
@@ -21,20 +18,18 @@ public class Main {
     @FindBy(xpath = "//yt-formatted-string[text()='Главная']//ancestor::ytd-guide-section-renderer//a")
     private List<WebElement> elementsOfMainBlock;
 
-    public enum MainValuesEnum implements Supplier<String> {
+    public enum MainValuesEnum implements Supplier<String>{
 
-        MAIN("Главная"),
-        NAVIGATOR("Навигатор"),
-        SUBSCRIPTIONS("Подписки");
+        MAIN("Главная"), NAVIGATOR("Навигатор"), SUBSCRIPTIONS("Подписки");
 
-        private String value;
+        private final String value;
 
-        MainValuesEnum(String value) {
+        MainValuesEnum(String value){
             this.value = value;
         }
 
         @Override
-        public String get() {
+        public String get(){
             return value;
         }
 

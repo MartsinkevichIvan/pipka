@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 @Block
 @Getter
-public class SettingsBlock {
+public class SettingsBlock{
 
     @FindBy(xpath = "//ytd-settings-sidebar-renderer[@class='style-scope ytd-browse']")
     private WebElement self;
@@ -25,13 +25,13 @@ public class SettingsBlock {
     private List<WebElement> menuSections;
 
     public WebElement getSetting(SettingsValues setting){
-        return menuSections.stream()
-                .filter(webElement -> setting.getValue().equals(webElement.getText()))
-                .findFirst().get();
+        var settingValue = menuSections.stream().filter(webElement -> setting.getValue().equals(webElement.getText())).findFirst();
+        if(settingValue.isPresent()) return settingValue.get();
+        throw new IllegalArgumentException("Can't find settings element with name: " + setting.getValue());
     }
 
     @Getter
-    public enum SettingsValues {
+    public enum SettingsValues{
         ACCOUNT("Аккаунт"),
         NOTIFICATIONS("Уведомления"),
         PLAYBACK("Воспроизведение"),
@@ -47,9 +47,7 @@ public class SettingsBlock {
         }
 
         public static List<String> getSettingsStringList(){
-            return Arrays.stream(values())
-                    .map(SettingsValues::getValue)
-                    .collect(Collectors.toList());
+            return Arrays.stream(values()).map(SettingsValues::getValue).collect(Collectors.toList());
         }
     }
 }

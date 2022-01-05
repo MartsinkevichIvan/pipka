@@ -1,4 +1,4 @@
-package blocks;
+package blocks.baseBlocks;
 
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 @Block
 @Getter
-public class HeaderBlock {
+public class HeaderBlock{
 
     @Autowired
     SearchBlock searchBlock;
@@ -42,11 +42,10 @@ public class HeaderBlock {
     /*
     choose settings by text
      */
-    @FindBy (xpath = "//ytd-multi-page-menu-renderer[@menu-style='multi-page-menu-style-type-system']" +
-            "//ytd-compact-link-renderer")
+    @FindBy(xpath = "//ytd-multi-page-menu-renderer[@menu-style='multi-page-menu-style-type-system']" + "//ytd-compact-link-renderer")
     private List<WebElement> settingsYoutube;
 
-    public enum YoutubeSettings implements Supplier<String> {
+    public enum YoutubeSettings implements Supplier<String>{
 
         THEME_SIMILAR_TO_PHONE("Тема: как на устройстве"),
         LANGUAGE("Язык:Русский"),
@@ -58,13 +57,13 @@ public class HeaderBlock {
         HOT_KEYS("Быстрые клавиши"),
         SAFE_MODE("Безопасный режим: откл.");
 
-        private String value;
+        private final String value;
 
-        YoutubeSettings(String value) {
+        YoutubeSettings(String value){
             this.value = value;
         }
 
-        public String get() {
+        public String get(){
             return value;
         }
 
@@ -76,24 +75,20 @@ public class HeaderBlock {
     /*
     choose youtubeApps by text
      */
-    @FindBy (xpath = "//ytd-multi-page-menu-renderer[@menu-style='multi-page-menu-style-type-yt-apps']" +
-            "//ytd-compact-link-renderer")
+    @FindBy(xpath = "//ytd-multi-page-menu-renderer[@menu-style='multi-page-menu-style-type-yt-apps']" + "//ytd-compact-link-renderer")
     private List<WebElement> youtubeApps;
 
-    public enum YoutubeApps implements Supplier<String> {
+    public enum YoutubeApps implements Supplier<String>{
 
-        YOUTUBE_TV("YouTube TV"),
-        YOUTUBE_MUSIC("YouTube Music"),
-        YOUTUBE_FOR_KIDS("YouTube Детям"),
-        YOUTUBE_FOR_MUSICIANS("YouTube для музыкантов");
+        YOUTUBE_TV("YouTube TV"), YOUTUBE_MUSIC("YouTube Music"), YOUTUBE_FOR_KIDS("YouTube Детям"), YOUTUBE_FOR_MUSICIANS("YouTube для музыкантов");
 
-        private String value;
+        private final String value;
 
-        YoutubeApps(String value) {
+        YoutubeApps(String value){
             this.value = value;
         }
 
-        public String get() {
+        public String get(){
             return value;
         }
 

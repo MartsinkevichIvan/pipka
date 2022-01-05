@@ -1,8 +1,6 @@
-package blocks;
+package blocks.baseBlocks;
 
-import blocks.checkers.checkCommonElements;
 import blocks.navigationSubBlocks.*;
-
 import driver.SingletonDriver;
 import lombok.Getter;
 import org.openqa.selenium.By;
@@ -15,7 +13,7 @@ import spring.annotations.Block;
 @Getter
 public class NavigationBlock{
 
-    @FindBy (xpath = "//ytd-guide-renderer[@id='guide-renderer']")
+    @FindBy(xpath = "//ytd-guide-renderer[@id='guide-renderer']")
     private WebElement self;
 
     @Autowired

@@ -1,4 +1,4 @@
-package blocks;
+package blocks.baseBlocks;
 
 import java.util.Arrays;
 import java.util.List;
@@ -49,7 +49,7 @@ public class FilterBlock {
         ACTIONS_AND_ADVENTURE("Экшен и приключения"),
         LAST_POSTED_VIDEO("Последние опубликованные видео");
 
-        private String value;
+        private final String value;
 
         Filters(String value) {
             this.value = value;

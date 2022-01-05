@@ -1,8 +1,6 @@
-package blocks;
+package blocks.baseBlocks;
 
-import blocks.checkers.checkCommonElements;
 import lombok.Getter;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import spring.annotations.Block;
@@ -14,16 +12,15 @@ import java.util.stream.Collectors;
 
 @Block
 @Getter
-public class FooterBlock {
+public class FooterBlock{
 
     @FindBy(xpath = "//ytd-guide-renderer[@id='guide-renderer']//div[@id='footer']")
     private WebElement self;
 
-    @FindBy (xpath = "//ytd-guide-renderer[@id='guide-renderer']//div[@id='footer']//div[@id='footer']//a")
+    @FindBy(xpath = "//ytd-guide-renderer[@id='guide-renderer']//div[@id='footer']//div[@id='footer']//a")
     private List<WebElement> footerElements;
 
-    public enum FooterValues implements Supplier<String> {
-
+    public enum FooterValues implements Supplier<String>{
         ABOUT_SERVICE("О сервисе"),
         PRESS("Прессе"),
         COPYRIGHT("Авторские права"),
@@ -37,14 +34,14 @@ public class FooterBlock {
         HOW_YOUTUBE_WORKS("Как работает YouTube"),
         TESTING_NEW_FUNCTIONS("Тестирование новых функций");
 
-        private String value;
+        private final String value;
 
-        FooterValues(String value) {
+        FooterValues(String value){
             this.value = value;
         }
 
         @Override
-        public String get() {
+        public String get(){
             return value;
         }
 

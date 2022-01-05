@@ -1,13 +1,8 @@
-package blocks.videoPlayer;
+package blocks.detailsBlocks;
 
-import driver.SingletonDriver;
 import lombok.Getter;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.logging.log4j.core.util.JsonUtils;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 import spring.annotations.Block;
 
 import java.util.Arrays;
@@ -16,7 +11,7 @@ import java.util.stream.Collectors;
 
 @Block
 @Getter
-public class VideoPlayer {
+public class VideoPlayer{
 
 
     @FindBy(xpath = "//button[@class='ytp-play-button ytp-button']")
@@ -49,7 +44,7 @@ public class VideoPlayer {
     private WebElement playerFullScreenButton;
     @FindBy(xpath = "//div[@class='ytp-popup ytp-settings-menu']/descendant::div[@class='ytp-menuitem-toggle-checkbox']")
     private WebElement playerAnnotationsCheckbox;
-//    @FindBy(xpath = "//div[@class='ytp-popup ytp-settings-menu']/descendant::div[@class='ytp-menuitem-content'][2]")
+    //    @FindBy(xpath = "//div[@class='ytp-popup ytp-settings-menu']/descendant::div[@class='ytp-menuitem-content'][2]")
     @FindBy(xpath = "//div[@class='ytp-menuitem']//div[contains(text(),'Скорость воспроизведения')]")
     private WebElement playerPlaybackSpeedSettings;
     @FindBy(xpath = "//div[@class='ytp-menuitem']//div[contains(text(),'Качество')]")
@@ -69,7 +64,6 @@ public class VideoPlayer {
     private WebElement playerSkipAds;
 
 
-
     /*
     Player subtitles settings
      */
@@ -79,11 +73,8 @@ public class VideoPlayer {
     private List<WebElement> playerSubtitlesList;
 
     public void checkSubs(){
-        var texts = getPlayerSubtitlesList().stream()
-                .map(WebElement::getText)
-                .collect(Collectors.toList());
+        var texts = getPlayerSubtitlesList().stream().map(WebElement::getText).collect(Collectors.toList());
     }
-
 
 
     /*
@@ -91,6 +82,7 @@ public class VideoPlayer {
      */
     @FindBy(xpath = "//div[@role='menuitemradio']//div[@class='ytp-menuitem-label']")
     private List<WebElement> playerSpeed;
+
     @Getter
     public enum PlayerSpeed{
         O_TWENTY_FIVE("0.25"),
@@ -102,16 +94,15 @@ public class VideoPlayer {
         ONE_FIFTY("1.5"),
         TWICE("2");
         String speedText;
+
         PlayerSpeed(String speed){
             this.speedText = speed;
         }
+
         public static List<String> getTexts(){
             return Arrays.stream(values()).map(PlayerSpeed::getSpeedText).collect(Collectors.toList());
         }
     }
-
-
-
 
 
     /*
@@ -119,6 +110,7 @@ public class VideoPlayer {
      */
     @FindBy(xpath = "//div[@role='menuitemradio']//div[@class='ytp-menuitem-label']//self::span[not(contains(@class, 'ytp-swatch-color'))]")
     private List<WebElement> playerQuality;
+
     @Getter
     public enum PlayerQuality{
         TWENTY_ONE_SIXTY("2160p"),
@@ -132,13 +124,13 @@ public class VideoPlayer {
         AUTO("Автонастройка");
 
         String qualityText;
+
         PlayerQuality(String quality){
             this.qualityText = quality;
         }
+
         public static List<String> getTexts(){
-            return Arrays.stream(values())
-                    .map(PlayerQuality::getQualityText)
-                    .collect(Collectors.toList());
+            return Arrays.stream(values()).map(PlayerQuality::getQualityText).collect(Collectors.toList());
         }
     }
 
@@ -150,6 +142,7 @@ public class VideoPlayer {
     private WebElement playerContextMenu;//useless element, remove?
     @FindBy(xpath = "//div[@class='ytp-popup ytp-contextmenu']//div[@class='ytp-menuitem-label']")
     private List<WebElement> playerContextMenuItemsList;
+
     @Getter
     public enum PlayerContextMenuItems{
         REPEAT("Повтор"),
@@ -160,17 +153,14 @@ public class VideoPlayer {
         PLAYBACK_ISSUE("Решить проблему с воспроизведением"),
         STATS("Статистика для сисадминов");
         String itemText;
+
         PlayerContextMenuItems(String item){
             this.itemText = item;
         }
+
         public static List<String> getTexts(){
-            return Arrays.stream(values())
-                    .map(PlayerContextMenuItems::getItemText)
-                    .collect(Collectors.toList());
+            return Arrays.stream(values()).map(PlayerContextMenuItems::getItemText).collect(Collectors.toList());
         }
     }
-
-
-
 
 }

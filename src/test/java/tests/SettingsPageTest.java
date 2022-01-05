@@ -1,22 +1,17 @@
 package tests;
 
 import blocks.navigationSubBlocks.Advanced;
-import blocks.settingsPageBlocks.SettingsBlock;
 import blocks.settingsPageBlocks.SettingsBlock.SettingsValues;
 import org.openqa.selenium.WebElement;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.event.annotation.BeforeTestClass;
-import org.springframework.test.context.event.annotation.BeforeTestMethod;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.LoginPage;
-import pages.SettingsPage;
+import pages.adminPages.SettingsPage;
 
-import pages.SettingsPage.NotificationSettingSubPage.NotificationSettingsValues;
-import pages.SettingsPage.PlaybackSettingSubPage.PlaybackAV1SettingsValues;
+import pages.adminPages.SettingsPage.NotificationSettingSubPage.NotificationSettingsValues;
+import pages.adminPages.SettingsPage.PlaybackSettingSubPage.PlaybackAV1SettingsValues;
 import utils.Wait;
 
 import static utils.Wait.waitForVisibilityOfElement;

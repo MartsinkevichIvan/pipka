@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
-import pages.SettingsPage;
+import pages.adminPages.SettingsPage;
 
 import static utils.Wait.*;
 

@@ -1,4 +1,4 @@
-package blocks.watchVideoPageBlocks;
+package blocks.detailsBlocks.watchVideoPageBlocks;
 
 import lombok.Getter;
 import org.openqa.selenium.By;

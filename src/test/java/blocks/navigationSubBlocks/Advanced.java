@@ -21,25 +21,22 @@ public class Advanced{
     private List<WebElement> elementsOfAdvanced;
 
     public WebElement getSettingElement(MainValuesEnum element){
-        return elementsOfAdvanced.stream()
-                .filter(webElement -> element.get().equals(webElement.getAttribute("title")))
-                .findFirst().get();
+        var settingsElement = elementsOfAdvanced.stream().filter(webElement -> element.get().equals(webElement.getAttribute("title"))).findFirst();
+        if(settingsElement.isPresent()) return settingsElement.get();
+        throw new IllegalArgumentException("Can't get settings element with name: " + element.get());
     }
 
-    public enum MainValuesEnum implements Supplier<String> {
-        SETTINGS("Настройки"),
-        REPORTS("Жалобы"),
-        REFERENCE("Справка"),
-        FEEDBACK("Отправить отзыв");
+    public enum MainValuesEnum implements Supplier<String>{
+        SETTINGS("Настройки"), REPORTS("Жалобы"), REFERENCE("Справка"), FEEDBACK("Отправить отзыв");
 
-        private String value;
+        private final String value;
 
-        MainValuesEnum(String value) {
+        MainValuesEnum(String value){
             this.value = value;
         }
 
         @Override
-        public String get() {
+        public String get(){
             return value;
         }
 

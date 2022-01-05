@@ -1,4 +1,4 @@
-package blocks;
+package blocks.baseBlocks;
 
 import lombok.Getter;
 import org.openqa.selenium.WebElement;

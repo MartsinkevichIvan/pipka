@@ -1,8 +1,5 @@
 package blocks.navigationSubBlocks;
 
-import blocks.HeaderBlock;
-import blocks.checkers.checkCommonElements;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import spring.annotations.Block;
@@ -18,26 +15,21 @@ public class BestOnYoutube{
     @FindBy(xpath = "//yt-formatted-string[text()='Лучшее на YouTube']//ancestor::ytd-guide-section-renderer")
     private WebElement self;
 
-    @FindBy (xpath = "//yt-formatted-string[text()='Лучшее на YouTube']//ancestor::ytd-guide-section-renderer//a")
+    @FindBy(xpath = "//yt-formatted-string[text()='Лучшее на YouTube']//ancestor::ytd-guide-section-renderer//a")
     private WebElement elementsOfBestOnYoutube;
 
-    public enum BestOnYoutubeValues implements Supplier<String> {
+    public enum BestOnYoutubeValues implements Supplier<String>{
 
-        MUSIC("Музыка"),
-        SPORT("Спорт"),
-        GAMES("Видеоигры"),
-        NEWS("Новости"),
-        TRANSLATIONS("Трансляции"),
-        PANORAMIC_VIDEOS("Панорамные видео");
+        MUSIC("Музыка"), SPORT("Спорт"), GAMES("Видеоигры"), NEWS("Новости"), TRANSLATIONS("Трансляции"), PANORAMIC_VIDEOS("Панорамные видео");
 
-        private String value;
+        private final String value;
 
-        BestOnYoutubeValues(String value) {
+        BestOnYoutubeValues(String value){
             this.value = value;
         }
 
         @Override
-        public String get() {
+        public String get(){
             return value;
         }
 

@@ -1,4 +1,4 @@
-package blocks.elements;
+package blocks.baseElements;
 
 import driver.SingletonDriver;
 import lombok.Getter;

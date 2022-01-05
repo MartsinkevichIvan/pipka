@@ -1,4 +1,4 @@
-package blocks.elements;
+package blocks.baseElements;
 
 import lombok.Getter;
 import org.openqa.selenium.By;
@@ -24,7 +24,7 @@ public class Toggle extends BaseElementBlock{
     }
 
     public boolean isActive(){
-        return this.getToggle().getAttribute("aria-pressed").equals("true");
+        return getToggle().getAttribute("aria-pressed").equals("true");
     }
 
     public Toggle set(boolean value){

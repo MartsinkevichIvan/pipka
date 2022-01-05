@@ -1,6 +1,5 @@
 package blocks;
 
-import blocks.checkers.checkCommonElements;
 import driver.SingletonDriver;
 import lombok.Getter;
 import org.openqa.selenium.By;
@@ -15,30 +14,25 @@ import java.util.stream.Collectors;
 
 @Block
 @Getter
-public class MiniNavigationBlock {
+public class MiniNavigationBlock{
 
-    @FindBy (xpath = "//ytd-mini-guide-renderer[@role='navigation']")
+    @FindBy(xpath = "//ytd-mini-guide-renderer[@role='navigation']")
     private WebElement self;
 
-    @FindBy (xpath = "//ytd-mini-guide-renderer[@role='navigation']//a")
+    @FindBy(xpath = "//ytd-mini-guide-renderer[@role='navigation']//a")
     private List<WebElement> miniNavigationElements;
 
-    public enum MiniNavigationValuesEnum implements Supplier<String> {
+    public enum MiniNavigationValuesEnum implements Supplier<String>{
+        MAIN("Главная"), NAVIGATOR("Навигатор"), SUBSCRIPTIONS("Подписки"), LIBRARY("Библиотека"), HISTORY("История");
 
-        MAIN("Главная"),
-        NAVIGATOR("Навигатор"),
-        SUBSCRIPTIONS("Подписки"),
-        LIBRARY("Библиотека"),
-        HISTORY("История");
+        private final String value;
 
-        private String value;
-
-        MiniNavigationValuesEnum(String value) {
+        MiniNavigationValuesEnum(String value){
             this.value = value;
         }
 
         @Override
-        public String get() {
+        public String get(){
             return value;
         }
 
@@ -48,7 +42,6 @@ public class MiniNavigationBlock {
     }
 
     public boolean blockIsDisplayed(){
-        return SingletonDriver.getDriver().findElements
-                (By.xpath("//ytd-mini-guide-renderer[@role='navigation']")).size() != 0;
+        return SingletonDriver.getDriver().findElements(By.xpath("//ytd-mini-guide-renderer[@role='navigation']")).size() != 0;
     }
 }
