@@ -10,19 +10,19 @@ import pages.adminPages.SettingsPage;
 import static utils.Wait.*;
 
 @Test
-public class LoginPageTest extends BaseTest{
+public class LoginPageTest extends BaseTest {
     @Autowired
     LoginPage loginPage;
     @Autowired
     SettingsPage settingsPage;
 
     @Test
-    public void userCanLogin(){
+    public void userCanLogin() {
         page.switchToNavigationBlock().getAdvanced().getSettingElement(Advanced.MainValuesEnum.SETTINGS).click();
         waitForVisibilityOfElement(loginPage.getEmailInput()).sendKeys(getUserCredentials("email"));
         loginPage.getNextButton().click();
         waitForVisibilityOfElement(loginPage.getPasswordInput()).sendKeys(getUserCredentials("password"));
         loginPage.getNextButton().click();
-        Assert.assertTrue(settingsPage.getHeaderBlock().getTopBarButtons().size()>2);
+        Assert.assertTrue(settingsPage.getHeaderBlock().getTopBarButtons().size() > 2);
     }
 }

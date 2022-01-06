@@ -15,22 +15,22 @@ import utils.TestListener;
 
 @Listeners(TestListener.class)
 @ContextConfiguration(classes = SpringConfig.class)
-public class BaseTest extends AbstractTestNGSpringContextTests implements PropertyDataReader{
+public class BaseTest extends AbstractTestNGSpringContextTests implements PropertyDataReader {
     @Autowired
     MainPage page;
 
     @BeforeMethod(alwaysRun = true)
-    public void configurePage(){
+    public void configurePage() {
         SingletonDriver.getDriver().get(getUrl(MAIN));
     }
 
     @AfterMethod(alwaysRun = true)
-    public void configureSuite(){
+    public void configureSuite() {
         SingletonDriver.deleteCookies();
     }
 
     @AfterSuite(alwaysRun = true)
-    public void deleteSuite(){
+    public void deleteSuite() {
         SingletonDriver.closeDriver();
     }
 }
