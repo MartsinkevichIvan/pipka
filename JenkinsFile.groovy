@@ -28,7 +28,6 @@ pipeline {
             }
             steps {
                 echo 'Running web tests'
-                sh ''
             }
         }
     }
