@@ -24,7 +24,7 @@ pipeline {
         stage('Web tests') {
             steps{
                 echo 'Running web tests'
-                 bat 'mvn clean test'
+                 bat 'mvn surefire.suiteXmlFiles=src\\test\\resources\\Testng-all.xml clean test'
                  echo 'Finishing web tests'
             }
 
