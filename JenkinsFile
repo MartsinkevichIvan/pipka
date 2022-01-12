@@ -1,0 +1,36 @@
+pipeline{
+    agent any
+
+    tools{
+        maven "3.8.4"
+        java  "11"
+    }
+
+    parameters{
+        booleanParams(defaultValue: true, description: 'run web tests', name:'web')
+        booleanParams(defaultValue: false, description: 'run rest tests', name:'rest')
+        booleanParams(defaultValue: false, description: 'run mobile tests', name:'mobile')
+    }
+
+    environment{
+
+    }
+    stages{
+        stage('Update project'){
+                echo 'Update project from git'
+                git url: 'git@git.epam.com:Artsiom_Rudzko/mobile-frame-bone.git'
+        }
+
+        stage('Web tests'){
+                steps{
+                    when{
+                        expression {return params.web}
+                    }
+                    step
+                    echo('Running tests')
+                    sh 'npe run test'
+                }
+            }
+    }
+
+}

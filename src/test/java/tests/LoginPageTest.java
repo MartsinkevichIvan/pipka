@@ -16,7 +16,7 @@ public class LoginPageTest extends BaseTest {
     @Autowired
     SettingsPage settingsPage;
 
-    @Test
+    @Test ()
     public void userCanLogin() {
         page.switchToNavigationBlock().getAdvanced().getSettingElement(Advanced.MainValuesEnum.SETTINGS).click();
         waitForVisibilityOfElement(loginPage.getEmailInput()).sendKeys(getUserCredentials("email"));

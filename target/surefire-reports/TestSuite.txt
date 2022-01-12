@@ -1,0 +1,38 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 7, Errors: 0, Skipped: 1, Time elapsed: 194.619 s <<< FAILURE! - in TestSuite
+tests.LoginPageTest.userCanLogin  Time elapsed: 24.293 s  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at tests.LoginPageTest.userCanLogin(LoginPageTest.java:26)
+
+tests.SettingsPageTest.allNotificationSettingsAreAvailable  Time elapsed: 20.434 s  <<< FAILURE!
+java.lang.IllegalArgumentException: Can't find settings element with name: Уведомления
+	at tests.SettingsPageTest.allNotificationSettingsAreAvailable(SettingsPageTest.java:52)
+
+tests.SettingsPageTest.allPrivacySettingAreAvailable  Time elapsed: 20.33 s  <<< FAILURE!
+java.lang.IllegalArgumentException: Can't find settings element with name: Конфиденциальность
+	at tests.SettingsPageTest.allPrivacySettingAreAvailable(SettingsPageTest.java:83)
+
+tests.SettingsPageTest.commentAnswerNotificationSettingIsAvailable  Time elapsed: 20.365 s  <<< FAILURE!
+java.lang.IllegalArgumentException: Can't find settings element with name: Уведомления
+	at tests.SettingsPageTest.commentAnswerNotificationSettingIsAvailable(SettingsPageTest.java:59)
+
+tests.SettingsPageTest.playbackRadioButtonsAreAvailable  Time elapsed: 20.386 s  <<< FAILURE!
+java.lang.IllegalArgumentException: Can't find settings element with name: Воспроизведение
+	at tests.SettingsPageTest.playbackRadioButtonsAreAvailable(SettingsPageTest.java:74)
+
+tests.SettingsPageTest.openSettingsPage  Time elapsed: 36.708 s  <<< FAILURE!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on WINDOWS (31a697e4e91a4737b43f0d4b1c12c414)] -> xpath: //input[@type='password']] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-PE5OJRC', ip: '26.46.131.206', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 97.0.4692.71, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\Mine\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:51865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 31a697e4e91a4737b43f0d4b1c12c414
+	at tests.SettingsPageTest.openSettingsPage(SettingsPageTest.java:32)
+
+tests.SingleTest.testShouldFail  Time elapsed: 0.971 s  <<< FAILURE!
+java.lang.AssertionError: null
+	at tests.SingleTest.testShouldFail(SingleTest.java:16)
+
