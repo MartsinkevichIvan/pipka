@@ -24,7 +24,7 @@ pipeline {
         stage('Web tests') {
             steps{
                 echo 'Running web tests'
-                 sh 'mvn -Dmaven.test.failure.ignore=true install'
+                 sh 'mvn test'
             }
 
         }
