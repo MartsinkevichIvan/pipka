@@ -24,7 +24,7 @@ pipeline {
         stage('Web tests') {
             steps{
                 echo 'Running web tests'
-                 sh 'mvn test'
+                 bat 'mvn test'
                  echo 'Finishing web tests'
             }
 
