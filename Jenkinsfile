@@ -24,7 +24,7 @@ pipeline {
         stage('Web tests') {
             steps{
                 echo 'Running web tests'
-                 bat 'mvn -Dmaven.test.failure.ignore=true clean package'
+                 sh 'mvn -Dmaven.test.failure.ignore=true clean package'
                  echo 'Finishing web tests'
             }
 
