@@ -24,7 +24,8 @@ pipeline {
         stage('Web tests') {
             steps{
                 echo 'Running web tests'
-                 bat 'java -cp "./lib/*:./bin" org.testng.TestNG testng.xml'
+                 sh 'mvn clean compile'
+                 sh 'mvn test'
                  echo 'Finishing web tests'
             }
 
