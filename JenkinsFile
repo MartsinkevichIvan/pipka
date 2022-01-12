@@ -15,7 +15,8 @@ pipeline {
         stage('Clone project') {
         steps{
                     echo 'Update project from git'
-                    git url: 'git@git.epam.com:Artsiom_Rudzko/mobile-frame-bone.git'
+                    sh "git pull --rebase origin fixedAppiumCore"
+//                     git url: 'git@git.epam.com:Artsiom_Rudzko/mobile-frame-bone.git'
         }
 
         }
