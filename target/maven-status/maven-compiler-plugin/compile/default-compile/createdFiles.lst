@@ -1,0 +1,13 @@
+spring\SpringConfig$CustomScopeRegisteringBeanFactoryPostProcessor.class
+appiumConfiguration\EnvironmentType.class
+appiumDriver\DriverManager.class
+driver\CustomFieldDecorator.class
+appiumDriver\DriverManager$1.class
+spring\annotations\PageObject.class
+appiumConfiguration\AddressConfigurator.class
+spring\SpringConfig$CustomBeanPostProcessor.class
+spring\annotations\Block.class
+appiumConfiguration\CapabilitiesConfigurator.class
+appiumConfiguration\AppiumConfigurationReader.class
+spring\SpringConfig.class
+driver\SingletonDriver.class

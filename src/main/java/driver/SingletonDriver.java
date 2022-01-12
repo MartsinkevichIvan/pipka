@@ -7,6 +7,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class SingletonDriver{
     private static final int WAITING_TIME = 20;
@@ -29,7 +30,7 @@ public class SingletonDriver{
                 }
             }
             driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WAITING_TIME)).pageLoadTimeout(Duration.ofSeconds(WAITING_TIME));
+            driver.manage().timeouts().implicitlyWait(WAITING_TIME, TimeUnit.SECONDS).pageLoadTimeout(WAITING_TIME, TimeUnit.SECONDS);
         }
         return driver;
     }

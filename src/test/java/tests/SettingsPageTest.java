@@ -17,28 +17,28 @@ import utils.Wait;
 import static utils.Wait.waitForVisibilityOfElement;
 
 @Test
-public class SettingsPageTest extends BaseTest{
+public class SettingsPageTest extends BaseTest {
     @Autowired
     LoginPage loginPage;
     @Autowired
     SettingsPage settingsPage;
 
     @BeforeMethod(alwaysRun = true)
-    public void openSettingsPage(){
-        if(page.getHeaderBlock().getTopBarButtons().size()<3){
+    public void openSettingsPage() {
+        if (page.getHeaderBlock().getTopBarButtons().size() < 3) {
             page.switchToNavigationBlock().getAdvanced().getSettingElement(Advanced.MainValuesEnum.SETTINGS).click();
             waitForVisibilityOfElement(loginPage.getEmailInput()).sendKeys(getUserCredentials("email"));
             loginPage.getNextButton().click();
             waitForVisibilityOfElement(loginPage.getPasswordInput()).sendKeys(getUserCredentials("password"));
             loginPage.getNextButton().click();
-        }
-        else {
+        } else {
             page.switchToNavigationBlock().getAdvanced().getSettingElement(Advanced.MainValuesEnum.SETTINGS).click();
         }
     }
+
     @Test(priority = -1)
-    public void allSettingsAreAvailable(){
-        for(WebElement element : settingsPage.getSettingsBlock().getMenuSections()){
+    public void allSettingsAreAvailable() {
+        for (WebElement element : settingsPage.getSettingsBlock().getMenuSections()) {
             element.click();
             Wait.forMillis(1000);
             String pageTitle = waitForVisibilityOfElement(settingsPage.getSettingTitle()).getText();
@@ -48,14 +48,14 @@ public class SettingsPageTest extends BaseTest{
     }
 
     @Test
-    public void allNotificationSettingsAreAvailable(){
+    public void allNotificationSettingsAreAvailable() {
         settingsPage.getSettingsBlock().getSetting(SettingsValues.NOTIFICATIONS).click();
         settingsPage.getNotificationSettingSubPage().getNotificationToggles().checkAll().uncheckAll();
         Wait.forMillis(1000);
     }
 
     @Test
-    public void commentAnswerNotificationSettingIsAvailable(){
+    public void commentAnswerNotificationSettingIsAvailable() {
         settingsPage.getSettingsBlock().getSetting(SettingsValues.NOTIFICATIONS).click();
         settingsPage.getNotificationSettingSubPage().getNotificationToggles().setToggleActive(NotificationSettingsValues.COMMENT_ANSWERS);
         settingsPage.getNotificationSettingSubPage().getNotificationToggles().setToggleInactive(NotificationSettingsValues.COMMENT_ANSWERS);
@@ -63,13 +63,14 @@ public class SettingsPageTest extends BaseTest{
     }
 
     @Test
-    public void playbackSettingsAreAvailable(){
+    public void playbackSettingsAreAvailable() {
         settingsPage.getSettingsBlock().getSetting(SettingsValues.PLAYBACK).click();
         settingsPage.getPlaybackSettingSubPage().getPlaybackCheckboxes().checkAll().uncheckAll();
         Wait.forMillis(1000);
     }
+
     @Test
-    public void playbackRadioButtonsAreAvailable(){
+    public void playbackRadioButtonsAreAvailable() {
         settingsPage.getSettingsBlock().getSetting(SettingsValues.PLAYBACK).click();
         settingsPage.getPlaybackSettingSubPage().getPlaybackAV1SettingsRadioButtons().getButton(PlaybackAV1SettingsValues.ALWAYS_PREFER_AV1).setActive();
         settingsPage.getPlaybackSettingSubPage().getPlaybackAV1SettingsRadioButtons().getButton(PlaybackAV1SettingsValues.PREFER_AV1_FOR_SD).isActive();
@@ -78,7 +79,7 @@ public class SettingsPageTest extends BaseTest{
     }
 
     @Test
-    public void allPrivacySettingAreAvailable(){
+    public void allPrivacySettingAreAvailable() {
         settingsPage.getSettingsBlock().getSetting(SettingsValues.PRIVACY).click();
         settingsPage.getPrivacySettingsSubPage().getPrivacySettingsToggles().checkAll().uncheckAll();
         Wait.forMillis(1000);

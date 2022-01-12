@@ -1,0 +1,36 @@
+def SUREFIRE_REPORT_PATH = 'target/surefire-reports/TEST-TestSuite.xml'
+
+
+pipeline {
+    agent any
+
+    parameters {
+        booleanParam(defaultValue: true, description: 'run web tests', name: 'web')
+        booleanParam(defaultValue: false, description: 'run api tests', name: 'api')
+        booleanParam(defaultValue: false, description: 'run mobile tests', name: 'mobile')
+
+    }
+
+    stages {
+        stage('Clone project') {
+        steps{
+                    echo 'Update project from git'
+                    sh "git pull --rebase origin fixedAppiumCore"
+//                     git url: 'git@git.epam.com:Artsiom_Rudzko/mobile-frame-bone.git'
+        }
+
+        }
+
+        stage('Web tests') {
+            steps{
+                when {
+                    expression { return params.web }
+                }
+                    steps {
+                        echo 'Running web tests'
+                    }
+            }
+
+        }
+    }
+}
