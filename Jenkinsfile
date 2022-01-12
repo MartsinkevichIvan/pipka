@@ -25,6 +25,7 @@ pipeline {
             steps{
                 echo 'Running web tests'
                  sh 'mvn -Dsurefire.suiteXmlFiles=src\\test\\resources\\Testng-all.xml clean test'
+                 echo 'Finishing web tests'
             }
 
         }
