@@ -13,17 +13,23 @@ pipeline {
 
     stages {
         stage('Clone project') {
-//             echo ('Update project from git')
-            git url: 'git@git.epam.com:Artsiom_Rudzko/mobile-frame-bone.git'
+        steps{
+                    echo 'Update project from git'
+                    git url: 'git@git.epam.com:Artsiom_Rudzko/mobile-frame-bone.git'
+        }
+
         }
 
         stage('Web tests') {
-            when {
-                expression { return params.web }
-            }
-            steps {
-                echo 'Running web tests'
-            }
+        steps{
+        when {
+                        expression { return params.web }
+                    }
+                    steps {
+                        echo 'Running web tests'
+                    }
+        }
+
         }
     }
 }
