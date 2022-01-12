@@ -15,8 +15,8 @@ pipeline {
         stage('Clone project') {
         steps{
                     echo 'Update project from git'
-                    sh "git pull --rebase origin master"
-//                     git url: 'git@git.epam.com:Artsiom_Rudzko/mobile-frame-bone.git'
+//                     sh "git pull --rebase origin master"
+                    git url: 'git@git.epam.com:Artsiom_Rudzko/mobile-frame-bone.git'
         }
 
         }
