@@ -23,9 +23,6 @@ pipeline {
 
         stage('Web tests') {
             steps{
-                when {
-                    expression { return params.web }
-                }
                     steps {
                         echo 'Running web tests'
                     }
