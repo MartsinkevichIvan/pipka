@@ -24,7 +24,7 @@ pipeline {
         stage('Web tests') {
             steps{
                 echo 'Running web tests'
-                sh 'java -cp target\classes\;jars\* org.testng.TestNG testng.xml'
+                 sh 'mvn -Dmaven.test.failure.ignore=true install'
             }
 
         }
