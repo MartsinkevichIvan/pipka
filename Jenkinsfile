@@ -23,9 +23,7 @@ pipeline {
 
         stage('Web tests') {
             steps{
-                    steps {
-                        echo 'Running web tests'
-                    }
+                echo 'Running web tests'
             }
 
         }
