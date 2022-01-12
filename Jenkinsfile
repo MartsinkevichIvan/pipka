@@ -24,8 +24,7 @@ pipeline {
         stage('Web tests') {
             steps{
                 echo 'Running web tests'
-                sh 'java -cp bin;lib/* org.testng.TestNG\
-                testng.xml'
+                sh 'java -cp bin\;jars\* org.testng.TestNG testng.xml'
             }
 
         }
