@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c3c84eed-e576-4cd6-89df-6e6418936a02" name="Changes" comment="sfasd" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="fixedAppiumCore" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="23I6D5If9Gdnc4or7UeXrNdJCPr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\proj\mobile-frame-bone\src\test\java\appium" />
+      <recent name="E:\proj\mobile-frame-bone\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="LoginPageTest.userCanLogin" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="testTask" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.LoginPageTest" />
+      <option name="METHOD_NAME" value="userCanLogin" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest.logInTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="testTask" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="appium.appiumTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="appium.appiumTests" />
+      <option name="MAIN_CLASS_NAME" value="appium.appiumTests.LoginTest" />
+      <option name="METHOD_NAME" value="logInTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest.logInTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="testTask" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="appium.appiumTestsad.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="appium.appiumTests" />
+      <option name="MAIN_CLASS_NAME" value="appium.appiumTestsad.LoginTest" />
+      <option name="METHOD_NAME" value="logInTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchTest.searchJava" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="testTask" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="appium.appiumTestsad.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="appium.appiumTests" />
+      <option name="MAIN_CLASS_NAME" value="appium.appiumTestsad.SearchTest" />
+      <option name="METHOD_NAME" value="searchJava" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SettingsPageTest.allNotificationSettingsAreAvailable" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="testTask" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SettingsPageTest" />
+      <option name="METHOD_NAME" value="allNotificationSettingsAreAvailable" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.LoginPageTest.userCanLogin" />
+        <item itemvalue="TestNG.LoginTest.logInTest (1)" />
+        <item itemvalue="TestNG.SettingsPageTest.allNotificationSettingsAreAvailable" />
+        <item itemvalue="TestNG.SearchTest.searchJava" />
+        <item itemvalue="TestNG.LoginTest.logInTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c3c84eed-e576-4cd6-89df-6e6418936a02" name="Changes" comment="" />
+      <created>1641409131822</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1641409131822</updated>
+    </task>
+    <task id="LOCAL-00001" summary="appium framework">
+      <created>1641463705698</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1641463705698</updated>
+    </task>
+    <task id="LOCAL-00002" summary="sfasd">
+      <created>1641987826239</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1641987826239</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="appium framework" />
+    <MESSAGE value="sfasd" />
+    <option name="LAST_COMMIT_MESSAGE" value="sfasd" />
+  </component>
+</project>
