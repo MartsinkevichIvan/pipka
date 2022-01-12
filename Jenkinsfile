@@ -24,7 +24,7 @@ pipeline {
         stage('Web tests') {
             steps{
                 echo 'Running web tests'
-                 sh 'mvn -Dsurefire.suiteXmlFiles=src\test\resources\Testng-all.xml clean test'
+                 sh 'mvn -Dmaven.test.failure.ignore=true clean package'
                  echo 'Finishing web tests'
             }
 
