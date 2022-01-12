@@ -24,6 +24,7 @@ pipeline {
         stage('Web tests') {
             steps{
                 echo 'Running web tests'
+                sh 'java -cp "lib/*" org.testng.TestNG Testng-all.xml'
             }
 
         }
