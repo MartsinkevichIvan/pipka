@@ -30,7 +30,7 @@ pipeline {
             steps{
                 echo 'Running web tests'
 //                  sh 'mvn clean compile'
-                 sh 'java -cp “.\\bin;.\\libs\\*” org.testng.TestNG testng.xml'
+                 sh "cp ../${MOBILE_PROJECT}/${SUREFIRE_REPORT_PATH} ./mobile_result.xml"
                  echo 'Finishing web tests'
 
 
