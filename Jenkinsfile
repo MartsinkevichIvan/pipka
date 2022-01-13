@@ -29,9 +29,8 @@ pipeline {
             }
             steps{
                 echo 'Running web tests'
-                echo '${MOBILE_PROJECT}'
-//                  sh 'mvn clean compile'
-                 sh "cp ../${MOBILE_PROJECT}/${SUREFIRE_REPORT_PATH} ./mobile_result.xml"
+                 sh 'mvn clean compile'
+                 sh "cp src/resources/Testng.xml"
                  echo 'Finishing web tests'
 
 
