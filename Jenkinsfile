@@ -29,8 +29,8 @@ pipeline {
             }
             steps{
                 echo 'Running web tests'
-                 sh 'mvn clean compile'
-                 sh 'mvn clean test -DsuiteXmlFile=testng.xml '
+//                  sh 'mvn clean compile'
+                 sh 'java -cp “.\bin;.\libs\*” org.testng.TestNG testng.xml'
                  echo 'Finishing web tests'
 
 
