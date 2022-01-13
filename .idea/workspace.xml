@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3c84eed-e576-4cd6-89df-6e6418936a02" name="Changes" comment="sfasd">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/TestngWeb.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginPageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2022-01-13T13-59-27_928.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +43,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../proj/mobile-frame-bone" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -47,7 +54,7 @@
       <recent name="E:\proj\mobile-frame-bone\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.maven1">
+  <component name="RunManager" selected="TestNG.E:/gittrying/proj/mobile-frame-bone/src/test/resources/TestngWeb.xml">
     <configuration name="maven1" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -75,6 +82,53 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration name="maven2" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="test" />
+                <option value="-Dtest.suite=TestngWeb" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="E:/gittrying/proj/mobile-frame-bone/src/test/resources/AppiumMobileTest.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="mobile-frame-bone" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/AppiumMobileTest.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="E:/gittrying/proj/mobile-frame-bone/src/test/resources/TestngWeb.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="mobile-frame-bone" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/TestngWeb.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoginPageTest.userCanLogin" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="testTask" />
       <extension name="coverage">
@@ -94,33 +148,15 @@
       </method>
     </configuration>
     <configuration name="LoginTest.logInTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="testTask" />
+      <module name="mobile-frame-bone" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="appium.appiumTestsad.*" />
+          <option name="PATTERN" value="appium.appiumPages.appiumTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="appium.appiumTests" />
-      <option name="MAIN_CLASS_NAME" value="appium.appiumTestsad.LoginTest" />
-      <option name="METHOD_NAME" value="logInTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LoginTest.logInTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="testTask" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.appiumTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="appium.appiumTests" />
-      <option name="MAIN_CLASS_NAME" value="tests.appiumTests.LoginTest" />
+      <option name="PACKAGE_NAME" value="tests.appiumTests" />
+      <option name="MAIN_CLASS_NAME" value="appium.appiumPages.appiumTests.LoginTest" />
       <option name="METHOD_NAME" value="logInTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -130,15 +166,15 @@
       </method>
     </configuration>
     <configuration name="SearchTest.searchJava" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="testTask" />
+      <module name="mobile-frame-bone" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="appium.appiumTestsad.*" />
+          <option name="PATTERN" value="appium.appiumPages.appiumTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="appium.appiumTests" />
-      <option name="MAIN_CLASS_NAME" value="appium.appiumTestsad.SearchTest" />
+      <option name="PACKAGE_NAME" value="tests.appiumTests" />
+      <option name="MAIN_CLASS_NAME" value="appium.appiumPages.appiumTests.SearchTest" />
       <option name="METHOD_NAME" value="searchJava" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -147,31 +183,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SettingsPageTest.allNotificationSettingsAreAvailable" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="testTask" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SettingsPageTest" />
-      <option name="METHOD_NAME" value="allNotificationSettingsAreAvailable" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Maven.maven2" />
+      <item itemvalue="Maven.maven1" />
+      <item itemvalue="TestNG.E:/gittrying/proj/mobile-frame-bone/src/test/resources/AppiumMobileTest.xml" />
+      <item itemvalue="TestNG.LoginPageTest.userCanLogin" />
+      <item itemvalue="TestNG.LoginTest.logInTest (1)" />
+      <item itemvalue="TestNG.SearchTest.searchJava (1)" />
+      <item itemvalue="TestNG.E:/gittrying/proj/mobile-frame-bone/src/test/resources/TestngWeb.xml" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.LoginPageTest.userCanLogin" />
+        <item itemvalue="TestNG.E:/gittrying/proj/mobile-frame-bone/src/test/resources/TestngWeb.xml" />
+        <item itemvalue="TestNG.SearchTest.searchJava (1)" />
         <item itemvalue="TestNG.LoginTest.logInTest (1)" />
-        <item itemvalue="TestNG.SettingsPageTest.allNotificationSettingsAreAvailable" />
-        <item itemvalue="TestNG.SearchTest.searchJava" />
-        <item itemvalue="TestNG.LoginTest.logInTest" />
+        <item itemvalue="TestNG.E:/gittrying/proj/mobile-frame-bone/src/test/resources/AppiumMobileTest.xml" />
+        <item itemvalue="TestNG.LoginPageTest.userCanLogin" />
       </list>
     </recent_temporary>
   </component>
@@ -217,5 +244,15 @@
     <MESSAGE value="appium framework" />
     <MESSAGE value="sfasd" />
     <option name="LAST_COMMIT_MESSAGE" value="sfasd" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,21 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 63.616 s <<< FAILURE! - in TestSuite
-tests.appiumTests.LoginTest.logInTest  Time elapsed: 57.951 s  <<< FAILURE!
-org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.xpath: //ytm-topbar-menu-button-renderer/button[@class='icon-button topbar-menu-button-avatar-button']
-	at tests.appiumTests.LoginTest.logInTest(LoginTest.java:18)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@6bc24e72 (tried for 1 second(s) with 500 milliseconds interval)
-	at tests.appiumTests.LoginTest.logInTest(LoginTest.java:18)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"xpath","selector":"//ytm-topbar-menu-button-renderer/button[@class='icon-button topbar-menu-button-avatar-button']"}
-  (Session info: chrome=83.0.4103.106)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-PE5OJRC', ip: '26.46.131.206', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.11'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appActivity: com.google.android.apps.chr..., appPackage: com.android.chrome, avd: Pixel_4_API_30, browserName: Chrome, databaseEnabled: false, desired: {avd: Pixel_4_API_30, browserName: Chrome, platformName: android, platformVersion: 11, udid: emulator-5554}, deviceApiLevel: 30, deviceManufacturer: Google, deviceModel: sdk_gphone_x86, deviceName: emulator-5554, deviceScreenDensity: 440, deviceScreenSize: 1080x2280, deviceUDID: emulator-5554, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 2.75, platform: LINUX, platformName: Android, platformVersion: 11, statBarHeight: 135, takesScreenshot: true, udid: emulator-5554, viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: 74465b64-25bc-4206-965c-f67c03b08dc7
-*** Element info: {Using=xpath, value=//ytm-topbar-menu-button-renderer/button[@class='icon-button topbar-menu-button-avatar-button']}
-	at tests.appiumTests.LoginTest.logInTest(LoginTest.java:18)
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.794 s <<< FAILURE! - in TestSuite
+tests.BaseTest.deleteSuite  Time elapsed: 2.023 s  <<< FAILURE!
+java.lang.NullPointerException
+	at tests.BaseTest.deleteSuite(BaseTest.java:34)
 
