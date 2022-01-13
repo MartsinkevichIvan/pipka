@@ -26,7 +26,7 @@ pipeline {
             }
             steps{
                 echo 'Running web tests'
-                 sh 'mvn test-Dtest.suite=TestngWeb'
+                 sh 'mvn test -Dtest.suite=TestngWeb'
                  echo 'Finishing web tests'
 
 
