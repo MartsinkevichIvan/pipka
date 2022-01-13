@@ -16,7 +16,7 @@ import utils.Wait;
 
 import static utils.Wait.waitForVisibilityOfElement;
 
-@Test
+@Test (groups = "web")
 public class SettingsPageTest extends BaseTest {
     @Autowired
     LoginPage loginPage;
