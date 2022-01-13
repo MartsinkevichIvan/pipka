@@ -22,6 +22,11 @@ pipeline {
         }
 
         stage('Web tests') {
+            when{
+                expression {
+                    params.web
+                }
+            }
             steps{
                 echo 'Running web tests'
                  sh 'mvn clean compile'
