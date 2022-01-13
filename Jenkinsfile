@@ -1,5 +1,5 @@
 def SUREFIRE_REPORT_PATH = 'target/surefire-reports/TEST-TestSuite.xml'
-
+def MOBILE_PROJECT = 'mobile-frame-bone'
 
 pipeline {
     agent any
