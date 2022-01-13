@@ -27,7 +27,7 @@ pipeline {
             steps{
                 echo 'Running web tests'
                  sh """mvn test\
-                                -Dtest.suite=${testSuite}
+                                -Dtest.suite=AppiumMobileTest
                  """
                  echo 'Finishing web tests'
 
