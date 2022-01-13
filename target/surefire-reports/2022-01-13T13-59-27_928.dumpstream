@@ -1,4 +1,4 @@
-# Created at 2022-01-12T18:20:32.071
+# Created at 2022-01-13T13:59:28.580
 Boot Manifest-JAR contains absolute paths in classpath 'E:\gittrying\proj\mobile-frame-bone\target\test-classes'
 Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
 

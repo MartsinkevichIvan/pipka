@@ -1,4 +1,4 @@
-package appium.appiumTests;
+package tests.appiumTests;
 
 import appium.appiumPages.AccountPage;
 import appium.appiumPages.MobileMainYoutubePage;
@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import service.PropertyDataReader;
 
+@Test(groups = "mobile")
 public class LoginTest extends BaseAppiumTest implements PropertyDataReader {
 
     @Test

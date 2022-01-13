@@ -1,5 +1,4 @@
 def SUREFIRE_REPORT_PATH = 'target/surefire-reports/TEST-TestSuite.xml'
-def MOBILE_PROJECT = 'mobile-frame-bone'
 
 pipeline {
     agent any
@@ -13,12 +12,10 @@ pipeline {
 
     stages {
         stage('Clone project') {
-        steps{
+            steps{
                     echo 'Update project from git'
-//                     sh "git pull --rebase origin master"
                     git url: 'https://github.com/MartsinkevichIvan/pipka.git'
-        }
-
+            }
         }
 
         stage('Web tests') {
@@ -29,8 +26,9 @@ pipeline {
             }
             steps{
                 echo 'Running web tests'
-                 sh 'mvn clean compile'
-                 sh "cp src/resources/Testng.xml"
+                 sh """mvn test\
+                                -Dtest.suite=${testSuite}
+                 """
                  echo 'Finishing web tests'
 
 

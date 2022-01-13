@@ -1,4 +1,4 @@
-package appium.appiumTests;
+package tests.appiumTests;
 
 import appiumDriver.DriverManager;
 import org.testng.annotations.AfterMethod;

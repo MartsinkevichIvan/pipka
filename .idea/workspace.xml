@@ -5,8 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c3c84eed-e576-4cd6-89df-6e6418936a02" name="Changes" comment="sfasd">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/AppiumMobileTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/appium/appiumTests/BaseAppiumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/appiumTests/BaseAppiumTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/appium/appiumTests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/appiumTests/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/appium/appiumTests/SearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/appiumTests/SearchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2022-01-12T09-40-53_699.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2022-01-12T18-20-31_448-jvmRun1.dump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2022-01-12T18-20-31_448-jvmRun1.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2022-01-12T18-20-31_448.dumpstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Testng-all.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/appium/appiumTests/BaseAppiumTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/appium/appiumTests/LoginTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/appium/appiumTests/SearchTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +67,34 @@
       <recent name="E:\proj\mobile-frame-bone\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.LoginPageTest.userCanLogin">
+  <component name="RunManager" selected="Maven.maven1">
+    <configuration name="maven1" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="test" />
+                <option value="-Dtest.suite=AppiumMobileTest" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <configuration name="LoginPageTest.userCanLogin" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="testTask" />
       <extension name="coverage">
@@ -67,16 +113,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTest.logInTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="LoginTest.logInTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="testTask" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="appium.appiumTests.*" />
+          <option name="PATTERN" value="appium.appiumTestsad.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="appium.appiumTests" />
-      <option name="MAIN_CLASS_NAME" value="appium.appiumTests.LoginTest" />
+      <option name="MAIN_CLASS_NAME" value="appium.appiumTestsad.LoginTest" />
       <option name="METHOD_NAME" value="logInTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -89,12 +135,12 @@
       <module name="testTask" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="appium.appiumTestsad.*" />
+          <option name="PATTERN" value="tests.appiumTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="appium.appiumTests" />
-      <option name="MAIN_CLASS_NAME" value="appium.appiumTestsad.LoginTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.appiumTests.LoginTest" />
       <option name="METHOD_NAME" value="logInTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />

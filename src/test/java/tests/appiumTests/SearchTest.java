@@ -1,4 +1,4 @@
-package appium.appiumTests;
+package tests.appiumTests;
 
 import appium.appiumPages.MobileMainYoutubePage;
 import appiumDriver.DriverManager;
@@ -12,6 +12,7 @@ import utils.Wait;
 import java.util.List;
 import java.util.Locale;
 
+@Test(groups = "ne mobile")
 public class SearchTest extends BaseAppiumTest {
 
     @Test

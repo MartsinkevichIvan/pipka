@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Appium tests" verbose="1" >
+    <test name="All appium tests"   >
+        <groups>
+            <run>
+                <include name="mobile"/>
+                <exclude name="web"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="tests.appiumTests"/>
+        </packages>
+    </test>
+</suite>

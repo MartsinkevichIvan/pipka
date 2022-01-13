@@ -1,6 +1,7 @@
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\AdvertisementBlock.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\baseElements\ListOfToggle.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\pages\detailsPages\WatchVideoPage.java
+E:\gittrying\proj\mobile-frame-bone\src\test\java\tests\appiumTests\BaseAppiumTest.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\baseElements\checkers\CheckListOfToggles.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\navigationSubBlocks\Promo.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\navigationSubBlocks\OtherOpportunities.java
@@ -13,14 +14,13 @@ E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\detailsBlocks\VideoPlay
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\detailsBlocks\watchVideoPageBlocks\secondaryColumnItems\SecondaryColumnVideoCard.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\baseElements\BaseElementBlock.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\MoviesBlock.java
-E:\gittrying\proj\mobile-frame-bone\src\test\java\appium\appiumTests\SearchTest.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\baseBlocks\HeaderBlock.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\MiniNavigationBlock.java
-E:\gittrying\proj\mobile-frame-bone\src\test\java\appium\appiumTests\LoginTest.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\detailsBlocks\watchVideoPageBlocks\WatchVideoPageSecondaryColumn.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\baseElements\ListOfCheckbox.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\utils\TestListener.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\pages\MainPage.java
+E:\gittrying\proj\mobile-frame-bone\src\test\java\tests\appiumTests\SearchTest.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\settingsPageBlocks\SettingsBlock.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\utils\Wait.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\tests\BaseTest.java
@@ -31,11 +31,11 @@ E:\gittrying\proj\mobile-frame-bone\src\test\java\tests\SingleTest.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\navigationSubBlocks\Channels.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\baseBlocks\NavigationBlock.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\navigationSubBlocks\Main.java
+E:\gittrying\proj\mobile-frame-bone\src\test\java\tests\appiumTests\LoginTest.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\tests\LoginPageTest.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\service\PropertyDataReader.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\pages\adminPages\SettingsPage.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\baseBlocks\FilterBlock.java
-E:\gittrying\proj\mobile-frame-bone\src\test\java\appium\appiumTests\BaseAppiumTest.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\appium\appiumPages\MobileMainYoutubePage.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\baseElements\checkers\CheckListOfCheckbox.java
 E:\gittrying\proj\mobile-frame-bone\src\test\java\blocks\MovieBlock.java

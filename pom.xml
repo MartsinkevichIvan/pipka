@@ -6,6 +6,9 @@
     <groupId>testTask</groupId>
     <artifactId>testTask</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <test.suite>Test all</test.suite>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.testng</groupId>
@@ -90,6 +93,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/${test.suite}.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                     <workingDirectory>./</workingDirectory>
                     <testFailureIgnore>true</testFailureIgnore>
                     <properties>

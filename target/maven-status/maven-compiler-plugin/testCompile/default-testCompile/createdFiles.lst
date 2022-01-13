@@ -8,7 +8,6 @@ blocks\navigationSubBlocks\Advanced.class
 blocks\navigationSubBlocks\UserHistory.class
 tests\BaseTest.class
 appium\appiumPages\BaseAppiumPage.class
-appium\appiumTests\LoginTest.class
 blocks\detailsBlocks\VideoPlayer$PlayerContextMenuItems.class
 tests\LoginPageTest.class
 pages\AbstractPage.class
@@ -20,13 +19,13 @@ utils\TestListener.class
 pages\adminPages\SettingsPage.class
 utils\JSActions.class
 blocks\navigationSubBlocks\Channels$ChannelsValuesEnum.class
-appium\appiumTests\SearchTest.class
 blocks\navigationSubBlocks\BestOnYoutube.class
 tests\SettingsPageTest.class
 blocks\baseElements\RadioButtonsBlock.class
 pages\detailsPages\WatchVideoPage$WatchVideoPageSecondaryInfoBox.class
 blocks\baseBlocks\NavigationBlock.class
 blocks\detailsBlocks\VideoPlayer.class
+tests\appiumTests\BaseAppiumTest.class
 blocks\baseBlocks\SearchBlock.class
 blocks\detailsBlocks\watchVideoPageBlocks\secondaryColumnItems\SecondaryColumnVideoCard.class
 pages\adminPages\SettingsPage$AdvancedSettingsSubPage.class
@@ -40,6 +39,8 @@ blocks\navigationSubBlocks\Channels.class
 blocks\navigationSubBlocks\Advanced$MainValuesEnum.class
 pages\detailsPages\WatchVideoPage$WatchVideoPagePrimaryInfoBox.class
 blocks\baseElements\checkers\CheckListOfToggles.class
+tests\appiumTests\LoginTest.class
+tests\appiumTests\SearchTest.class
 blocks\baseBlocks\AlertBlock.class
 blocks\settingsPageBlocks\SettingsBlock.class
 pages\adminPages\SettingsPage$ConnectedAppsSettingsSubPage$AppsForConnectionValues.class
@@ -49,7 +50,6 @@ pages\detailsPages\WatchVideoPage.class
 pages\adminPages\SettingsPage$PrivacySettingsSubPage$PrivacySettingsValues.class
 pages\MainPage.class
 blocks\navigationSubBlocks\Main$MainValuesEnum.class
-appium\appiumTests\BaseAppiumTest.class
 blocks\detailsBlocks\watchVideoPageBlocks\secondaryColumnItems\SecondaryColumnPlaylist.class
 pages\adminPages\SettingsPage$ConnectedAppsSettingsSubPage.class
 blocks\detailsBlocks\VideoPlayer$PlayerQuality.class
