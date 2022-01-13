@@ -30,7 +30,7 @@ pipeline {
             steps{
                 echo 'Running web tests'
                  sh 'mvn clean compile'
-                 sh 'mvn test -Dsurefire.suiteXmlFiles=Testng-appium.xml'
+                 sh 'mvn clean test -DsuiteXmlFile=testng.xml '
                  echo 'Finishing web tests'
 
 
