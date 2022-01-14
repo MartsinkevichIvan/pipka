@@ -31,7 +31,7 @@ pipeline {
             }
             post {
                 always {
-                    step([$class: 'XUnitBuilder',
+                    step([$class: 'XUnitPublisher',
                     thresholdMode: 2,
                     thresholds: [[$class: 'FailedThreshold', unstableThreshold: '90']],
                     tools: [[$class: 'JUnitType', pattern: 'encoder_result.xml']]])
