@@ -47,7 +47,7 @@ pipeline {
             }
             steps{
                 echo 'Running api tests'
-                sh 'mvn test-Dtest.suite=AppiumMobileTest'
+                sh 'mvn test -Dtest.suite=AppiumMobileTest'
                 echo 'Finishing api tests'
             }
         }
