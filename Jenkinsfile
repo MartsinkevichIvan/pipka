@@ -34,7 +34,7 @@ pipeline {
                     step([$class: 'XUnitPublisher',
                     thresholdMode: 2,
                     thresholds: [[$class: 'FailedThreshold', unstableThreshold: '90']],
-                    tools: [[$class: 'JUnitType', pattern: 'TestngWeb.xml']]])
+                    tools: [[$class: 'JUnitType', pattern: 'TEST-TestSuite.xml']]])
                 }
             }
 
