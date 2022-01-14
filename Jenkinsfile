@@ -38,7 +38,7 @@ pipeline {
 //                 }
 //             }
 
-        }
+//         }
         stage("Appium tests"){
             when (expression){
                 params.api
