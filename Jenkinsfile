@@ -28,8 +28,6 @@ pipeline {
                 echo 'Running web tests'
                  sh 'mvn test -Dtest.suite=TestngWeb'
                  echo 'Finishing web tests'
-
-
             }
 //             post {
 //                 always {
