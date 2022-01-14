@@ -18,17 +18,17 @@ pipeline {
             }
         }
 
-        stage('Web tests') {
-            when{
-                expression {
-                    params.web
-                }
-            }
-            steps{
-                echo 'Running web tests'
-                 sh 'mvn test -Dtest.suite=TestngWeb'
-                 echo 'Finishing web tests'
-            }
+//         stage('Web tests') {
+//             when{
+//                 expression {
+//                     params.web
+//                 }
+//             }
+//             steps{
+//                 echo 'Running web tests'
+//                  sh 'mvn test -Dtest.suite=TestngWeb'
+//                  echo 'Finishing web tests'
+//             }
 //             post {
 //                 always {
 //                     step([$class: 'XUnitBuilder',
@@ -38,6 +38,16 @@ pipeline {
 //                 }
 //             }
 
+        }
+        stage("Appium tests"){
+            when (expression){
+                params.api
+            }
+            steps{
+                echo 'Running api tests'
+                sh 'mvn test-Dtest.suite=AppiumMobileTest'
+                echo 'Finishing api tests'
+            }
         }
     }
 }
