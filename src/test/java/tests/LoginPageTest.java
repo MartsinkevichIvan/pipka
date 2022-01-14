@@ -9,7 +9,7 @@ import pages.adminPages.SettingsPage;
 
 import static utils.Wait.*;
 
-@Test (groups = "web")
+@Test (groups = "web1")
 public class LoginPageTest extends BaseTest {
     @Autowired
     LoginPage loginPage;

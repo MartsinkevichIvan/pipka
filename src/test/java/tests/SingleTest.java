@@ -3,7 +3,7 @@ package tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-@Test(groups = "web1")
+@Test(groups = "web")
 public class SingleTest extends BaseTest{
 
     @Test
