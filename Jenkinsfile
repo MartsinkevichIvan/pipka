@@ -30,13 +30,13 @@ pipeline {
                  echo 'Finishing web tests'
             }
             post {
-                always {
-                    step([$class: 'XUnitPublisher',
-                    thresholdMode: 2,
-                    thresholds: [[$class: 'FailedThreshold', unstableThreshold: '90']],
-                    tools: [[$class: 'JUnitType', pattern: 'encoder_result.xml']]])
+                    always{
+                        xunit (
+                            thresholds: [ skipped(failureThreshold: '0'), failed(failureThreshold: '0') ],
+                            tools: [ BoostTest(pattern: 'boost/*.xml') ]
+                        )
+                    }
                 }
-            }
 
         }
         stage("Appium tests"){
