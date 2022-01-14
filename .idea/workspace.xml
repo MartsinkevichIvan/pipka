@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c3c84eed-e576-4cd6-89df-6e6418936a02" name="Changes" comment="sfasd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/appiumTests/SearchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/appiumTests/SearchTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/AppiumMobileTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/AppiumMobileTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/AppiumMobileTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/AppiumMobileTest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +50,7 @@
       <recent name="E:\proj\mobile-frame-bone\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.E:/gittrying/proj/mobile-frame-bone/src/test/resources/TestngWeb.xml">
+  <component name="RunManager" selected="TestNG.E:/gittrying/proj/mobile-frame-bone/src/test/resources/AppiumMobileTest.xml">
     <configuration name="maven1" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -141,17 +143,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTest.logInTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SearchTest.searchJava (1)" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="mobile-frame-bone" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="appium.appiumPages.appiumTests.*" />
+          <option name="PATTERN" value="tests.appiumTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests.appiumTests" />
-      <option name="MAIN_CLASS_NAME" value="appium.appiumPages.appiumTests.LoginTest" />
-      <option name="METHOD_NAME" value="logInTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.appiumTests.SearchTest" />
+      <option name="METHOD_NAME" value="searchJava" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -180,16 +182,17 @@
     <list>
       <item itemvalue="Maven.maven2" />
       <item itemvalue="Maven.maven1" />
-      <item itemvalue="TestNG.LoginTest.logInTest" />
       <item itemvalue="TestNG.SearchTest.searchJava" />
       <item itemvalue="TestNG.E:/gittrying/proj/mobile-frame-bone/src/test/resources/AppiumMobileTest.xml" />
       <item itemvalue="TestNG.LoginPageTest.userCanLogin" />
       <item itemvalue="TestNG.E:/gittrying/proj/mobile-frame-bone/src/test/resources/TestngWeb.xml" />
+      <item itemvalue="TestNG.SearchTest.searchJava (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.E:/gittrying/proj/mobile-frame-bone/src/test/resources/TestngWeb.xml" />
         <item itemvalue="TestNG.E:/gittrying/proj/mobile-frame-bone/src/test/resources/AppiumMobileTest.xml" />
+        <item itemvalue="TestNG.SearchTest.searchJava (1)" />
+        <item itemvalue="TestNG.E:/gittrying/proj/mobile-frame-bone/src/test/resources/TestngWeb.xml" />
         <item itemvalue="TestNG.LoginPageTest.userCanLogin" />
       </list>
     </recent_temporary>

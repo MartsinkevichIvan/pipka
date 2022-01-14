@@ -5,7 +5,6 @@
         <groups>
             <run>
                 <include name="mobile"/>
-                <exclude name="web"/>
             </run>
         </groups>
         <packages>

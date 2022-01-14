@@ -12,7 +12,7 @@ import utils.Wait;
 import java.util.List;
 import java.util.Locale;
 
-@Test(groups = "ne mobile")
+@Test(groups = "mobile")
 public class SearchTest extends BaseAppiumTest {
 
     @Test
