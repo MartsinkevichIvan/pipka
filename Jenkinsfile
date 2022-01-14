@@ -29,14 +29,14 @@ pipeline {
                  sh 'mvn test -Dtest.suite=TestngWeb'
                  echo 'Finishing web tests'
             }
-//             post {
-//                 always {
-//                     step([$class: 'XUnitBuilder',
-//                     thresholdMode: 2,
-//                     thresholds: [[$class: 'FailedThreshold', unstableThreshold: '90']],
-//                     tools: [[$class: 'JUnitType', pattern: 'encoder_result.xml']]])
-//                 }
-//             }
+            post {
+                always {
+                    step([$class: 'XUnitBuilder',
+                    thresholdMode: 2,
+                    thresholds: [[$class: 'FailedThreshold', unstableThreshold: '90']],
+                    tools: [[$class: 'JUnitType', pattern: 'encoder_result.xml']]])
+                }
+            }
 
         }
         stage("Appium tests"){
