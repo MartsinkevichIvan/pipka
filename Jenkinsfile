@@ -40,8 +40,10 @@ pipeline {
 
 //         }
         stage("Appium tests"){
-            when (expression){
-                params.api
+            when {
+                expression{
+                    params.api
+                }
             }
             steps{
                 echo 'Running api tests'
