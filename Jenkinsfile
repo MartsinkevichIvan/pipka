@@ -38,7 +38,7 @@ pipeline {
             }
             steps{
                 echo 'Running apxi tests'
-                build job: 'WebJob', parameters:[string(name:'Appium',value:'AppiumJob'),]
+                build job: 'AppiumJob', parameters:[string(name:'Appium',value:'AppiumJob'),]
                 echo 'Finishing api tests'
             }
         }
