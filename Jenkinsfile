@@ -26,7 +26,7 @@ pipeline {
             }
             steps{
                 echo 'Running web tests'
-                 sh 'mvn test -Drp.launch=aliaksandr_dyrykau_TEST -Dtest.suite=TestngWeb'
+                 sh 'mvn test -Drp.launch=aliaksandr_dyrykau_WEB -Dtest.suite=TestngWeb'
                  echo 'Finishing web tests'
             }
         }
