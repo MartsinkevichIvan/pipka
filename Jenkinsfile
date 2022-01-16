@@ -11,14 +11,14 @@ pipeline {
     }
 
     stages {
-        stage('Clone project') {
-            steps{
-                    echo 'Update project from git'
-                    git url: 'https://github.com/MartsinkevichIvan/pipka.git'
-            }
-        }
+//         stage('Clone project') {
+//             steps{
+//                     echo 'Update project from git'
+//                     git url: 'https://github.com/MartsinkevichIvan/pipka.git'
+//             }
+//         }
 
-        stage('Web tests') {
+        stage('Web tests')   {
             when{
                 expression {
                     params.web
@@ -26,15 +26,7 @@ pipeline {
             }
             steps{
                 echo 'Running web tests'
-                 sh 'mvn test -Drp.launch=WEB -Dpropagate=false -Dtest.suite=TestngWeb1'
-                 sh 'if [ -f "$file" ]
-                     then
-                         echo "$file found."
-                     else
-                         echo "$file not found."
-                         exit 1
-                     fi'
-                 echo 'Finishing web tests'
+                build job: 'WebJob', parameters:[string(name:'TestngWeb',value:'TestngWeb'),]
             }
         }
 
@@ -45,8 +37,8 @@ pipeline {
                 }
             }
             steps{
-                echo 'Running api tests'
-                sh 'mvn test -Drp.launch=Appium -Dtest.suite=AppiumMobileTest'
+                echo 'Running apxi tests'
+                build job: 'WebJob', parameters:[string(name:'Appium',value:'AppiumJob'),]
                 echo 'Finishing api tests'
             }
         }
