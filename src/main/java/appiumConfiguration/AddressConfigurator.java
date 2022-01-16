@@ -29,7 +29,7 @@ public class AddressConfigurator {
     public static void startService(int port) {
         makePortAvailableIfOccupied(port);
         appiumDriverLocalService = new AppiumServiceBuilder()
-                .withAppiumJS(new File("/usr/lib/node_modules/appium/build/lib/main.js"))
+                .withAppiumJS(new File("C:\\Users\\Mine\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
                 .withIPAddress(AppiumConfigurationReader.get().appiumAddress())
                 .usingPort(port)
                 .withArgument(SESSION_OVERRIDE)
