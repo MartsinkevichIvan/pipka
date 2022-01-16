@@ -26,19 +26,11 @@ pipeline {
             }
             steps{
                 echo 'Running web tests'
-                 sh 'mvn test -Dtest.suite=TestngWeb'
+                 sh 'mvn test -Drp.launch=aliaksandr_dyrykau_TEST -Dtest.suite=TestngWeb'
                  echo 'Finishing web tests'
             }
-            post {
-                always {
-                    step([$class: 'XUnitPublisher',
-                    thresholdMode: 2,
-                    thresholds: [[$class: 'FailedThreshold', unstableThreshold: '90']],
-                    tools: [[$class: 'JUnitType', pattern: 'TEST-TestSuite.xml']]])
-                }
-            }
-
         }
+
         stage("Appium tests"){
             when {
                 expression{
