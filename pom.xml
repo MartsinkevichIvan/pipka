@@ -8,7 +8,7 @@
     <version>1.0-SNAPSHOT</version>
     <properties>
         <test.suite>Test all</test.suite>
-        <rp.launch>"Web"</rp.launch>
+        <rp.launch>Web</rp.launch>
     </properties>
     <dependencies>
         <dependency>
