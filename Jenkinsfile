@@ -7,7 +7,7 @@ pipeline {
         booleanParam(defaultValue: true, description: 'run web tests', name: 'web')
         booleanParam(defaultValue: false, description: 'run api tests', name: 'api')
         booleanParam(defaultValue: false, description: 'run mobile tests', name: 'mobile')
-        booleanParam(defaultValue: true, description: 'propogate parameter', name: propogate)
+        booleanParam(defaultValue: true, description: 'propogate parameter', name: 'propogate')
 
     }
 
