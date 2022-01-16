@@ -26,6 +26,10 @@ pipeline {
             }
             steps{
                 echo 'Running web tests'
+                if (!continueBuild) {
+                    currentBuild.result = 'ABORTED'
+                    error('Stopping early…')
+                }
                 build job: 'WebJob', parameters:[string(name:'TestngWeb',value:'TestngWeb')],propagate:false
             }
         }
