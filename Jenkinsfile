@@ -27,6 +27,13 @@ pipeline {
             steps{
                 echo 'Running web tests'
                  sh 'mvn test -Drp.launch=WEB -Dpropagate=true -Dtest.suite=TestngWeb1'
+                 sh 'if [ -f "$file" ]
+                     then
+                         echo "$file found."
+                     else
+                         echo "$file not found."
+                         exit 1
+                     fi'
                  echo 'Finishing web tests'
             }
         }
