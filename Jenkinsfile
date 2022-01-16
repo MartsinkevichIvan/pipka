@@ -27,7 +27,7 @@ pipeline {
             }
             steps{
                 echo 'Running web tests'
-                 sh 'mvn test -Drp.launch=WEB -Dpropagate=propogate -Dtest.suite=TestngWeb1'
+                 sh 'mvn test -Drp.launch=WEB -Dpropagate=false -Dtest.suite=TestngWeb1'
                  echo 'Finishing web tests'
             }
         }
