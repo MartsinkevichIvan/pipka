@@ -26,7 +26,7 @@ pipeline {
             }
             steps{
                 build job: 'WebJob', parameters:[string(name:'test.suite',value:'TestngWeb'),
-                string(name: 'rp_launch_name', value: WEB_TESTS_FROM_JENKINS)],propagate:false
+                string(name: 'rp_launch_name', value: "WEB_TESTS_FROM_JENKINS")],propagate:false
             }
         }
 
