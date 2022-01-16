@@ -26,7 +26,7 @@ pipeline {
             }
             steps{
                 echo 'Running web tests'
-                build job: 'WebJob', parameters:[string(name:'TestngWeb',value:'TestngWeb')], propagate=false
+                build job: 'WebJob', parameters:[string(name:'TestngWeb',value:'TestngWeb')]
             }
         }
 
