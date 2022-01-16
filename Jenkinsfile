@@ -25,8 +25,8 @@ pipeline {
                 }
             }
             steps{
-                echo 'Running web tests'
-                build job: 'WebJob', parameters:[string(name:'TestngWeb',value:'TestngWeb')],propagate:false
+                build job: 'WebJob', parameters:[string(name:'test.suite',value:'TestngWeb'),
+                string(name: 'rp_launch_name', value: WEB_TESTS_FROM_JENKINS)],propagate:false
             }
         }
 
@@ -37,9 +37,7 @@ pipeline {
                 }
             }
             steps{
-                echo 'Running apxi tests'
-                build job: 'AppiumJob', parameters:[string(name:'Appium',value:'AppiumJob')]
-                echo 'Finishing api tests'
+                build job: 'AppiumJob', parameters:[string(name:'Appium',value:'AppiumJob')],propagate:false
             }
         }
     }
