@@ -5,6 +5,7 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.ServerSocket;
 
@@ -28,6 +29,7 @@ public class AddressConfigurator {
     public static void startService(int port) {
         makePortAvailableIfOccupied(port);
         appiumDriverLocalService = new AppiumServiceBuilder()
+                .withAppiumJS(new File("/usr/lib/node_modules/appium/build/lib/main.js"))
                 .withIPAddress(AppiumConfigurationReader.get().appiumAddress())
                 .usingPort(port)
                 .withArgument(SESSION_OVERRIDE)
