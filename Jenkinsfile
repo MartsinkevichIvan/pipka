@@ -7,6 +7,7 @@ pipeline {
         booleanParam(defaultValue: true, description: 'run web tests', name: 'web')
         booleanParam(defaultValue: false, description: 'run api tests', name: 'api')
         booleanParam(defaultValue: false, description: 'run mobile tests', name: 'mobile')
+        booleanParam(defaultValue: true, description: 'propogate parameter', name: propogate)
 
     }
 
@@ -26,7 +27,7 @@ pipeline {
             }
             steps{
                 echo 'Running web tests'
-                 sh 'mvn test -Drp.launch=aliaksandr_dyrykau_WEB -Dtest.suite=TestngWeb'
+                 sh 'mvn test -Drp.launch=WEB -Dtest.suite=TestngWeb'
                  echo 'Finishing web tests'
             }
         }
@@ -39,7 +40,7 @@ pipeline {
             }
             steps{
                 echo 'Running api tests'
-                sh 'mvn test -Dtest.suite=AppiumMobileTest'
+                sh 'mvn test -Drp.launch=Appium -Dtest.suite=AppiumMobileTest'
                 echo 'Finishing api tests'
             }
         }
