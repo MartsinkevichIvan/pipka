@@ -26,7 +26,7 @@ pipeline {
             }
             steps{
                 build job: 'WebJob', parameters:[string(name:'test.suite',value:'TestngWeb'),
-                string(name: 'rp_launch_name', value: "WEB_TESTS_FROM_JENKINS")],propagate:false
+                string(name: 'rp.launch', value: "WEB_TESTS_FROM_JENKINS")],propagate:false
             }
         }
 
@@ -37,7 +37,8 @@ pipeline {
                 }
             }
             steps{
-                build job: 'AppiumJob', parameters:[string(name:'Appium',value:'AppiumJob')],propagate:false
+                build job: 'AppiumJob', parameters:[string(name:'test.suite',value:'AppiumMobileTest'),
+                string(name: 'rp.launch', value: "App_TESTS_FROM_JENKINS")],propagate:false
             }
         }
     }
