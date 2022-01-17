@@ -32,7 +32,7 @@ pipeline {
                 always{
                     step([$class: 'XUnitPublisher', testTimeMargin: '3000', thresholdMode: 2,
                         thresholds: [
-                            [$class: 'FailedThreshold', unstableThreshold: '90'],
+                            [$class: 'FailedThreshold', unstableThreshold: '50'],
                             [$class: 'SkippedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '']],
                         tools: [
                             [$class: 'JUnitType', deleteOutputFiles: false, failIfNotNew: false, pattern: '**/target/surefire-reports/TEST-*.xml', skipNoTestFiles: true, stopProcessingIfError: false]]
@@ -53,6 +53,17 @@ pipeline {
                 string(name: 'rp.launch', value: "App_TESTS_FROM_JENKINS")],
                 propagate:false
             }
+            post{
+                            always{
+                                step([$class: 'XUnitPublisher', testTimeMargin: '3000', thresholdMode: 2,
+                                    thresholds: [
+                                        [$class: 'FailedThreshold', unstableThreshold: '90'],
+                                        [$class: 'SkippedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '']],
+                                    tools: [
+                                        [$class: 'JUnitType', deleteOutputFiles: false, failIfNotNew: false, pattern: '**/target/surefire-reports/TEST-*.xml', skipNoTestFiles: true, stopProcessingIfError: false]]
+                                    ])
+                            }
+                        }
         }
     }
 }
