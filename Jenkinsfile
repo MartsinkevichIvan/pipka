@@ -28,6 +28,17 @@ pipeline {
                 build job: 'WebJob', parameters:[string(name:'test.suite',value:'TestngWeb'),
                 string(name: 'rp.launch', value: 'WEB_TESTS_FROM_JENKINS')],propagate:false
             }
+            post{
+                always{
+                    step([$class: 'XUnitBuilder', testTimeMargin: '3000', thresholdMode: 1,
+                        thresholds: [
+                            [$class: 'FailedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '1'],
+                            [$class: 'SkippedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '']],
+                        tools: [
+                            [$class: 'JUnitType', deleteOutputFiles: false, failIfNotNew: false, pattern: '**/target/surefire-reports/TEST-*.xml', skipNoTestFiles: true, stopProcessingIfError: false]]
+                        ])
+                }
+            }
         }
 
         stage("Appium tests"){
