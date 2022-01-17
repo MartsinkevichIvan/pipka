@@ -3,6 +3,14 @@ def SUREFIRE_REPORT_PATH = 'target/surefire-reports/TEST-TestSuite.xml'
 pipeline {
     agent any
 
+    properties([
+          parameters([
+            string(name: 'rp.launch', defaultValue: 'DEBUG'),
+            string(name: 'submodule_branch', defaultValue: ''),
+            string(name: 'commit_sha', defaultValue: ''),
+          ])
+        ])
+
     parameters {
         booleanParam(defaultValue: true, description: 'run web tests', name: 'web')
         booleanParam(defaultValue: false, description: 'run api tests', name: 'api')
@@ -24,6 +32,7 @@ pipeline {
                     params.web
                 }
             }
+
             steps{
                 build job: 'WebJob', parameters:[string(name:'test.suite',value:'TestngWeb'),
                 string(name: 'rp.launch', value: 'WEB_TESTS_FROM_JENKINS')],propagate:false
