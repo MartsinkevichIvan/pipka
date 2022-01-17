@@ -28,6 +28,14 @@ pipeline {
                 build job: 'WebJob', parameters:[string(name:'test.suite',value:'TestngWeb'),
                 string(name: 'rp.launch', value: "WEB_TESTS_FROM_JENKINS")],propagate:false
             }
+            post {
+                always {
+                    step([$class: 'XUnitBuilder',
+                    thresholdMode: 2,
+                    thresholds: [[$class: 'FailedThreshold', unstableThreshold: '100']],
+                    tools: [[$class: 'JUnitType', pattern: 'regression_result.xml']]])
+                }
+            }
         }
 
         stage("Appium tests"){
