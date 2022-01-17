@@ -30,10 +30,9 @@ pipeline {
             }
             post{
                 always{
-                    step([$class: 'XUnitPublisher', testTimeMargin: '3000', thresholdMode: 2,
+                    step([$class: 'XUnitPublisher', testTimeMargin: '3000', thresholdMode: 1,
                         thresholds: [
-                            [$class: 'FailedThreshold', unstableThreshold: '50'],
-                            [$class: 'SkippedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '']],
+                            [$class: 'FailedThreshold', unstableThreshold: '50']],
                         tools: [
                             [$class: 'JUnitType', deleteOutputFiles: false, failIfNotNew: false, pattern: '**/target/surefire-reports/TEST-*.xml', skipNoTestFiles: true, stopProcessingIfError: false]]
                         ])
