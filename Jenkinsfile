@@ -30,7 +30,7 @@ pipeline {
             }
             post{
                 always{
-                    step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'])
+                    step([$class: 'Publisher', reportFilenamePattern: '**/testng-results.xml'],
                     thresholdMode: 2,
                     thresholds: [[$class: 'FailedThreshold', unstableThreshold: '90']],
                     tools: [[$class: 'TestngType', pattern: '**/testng-results.xml']]])
