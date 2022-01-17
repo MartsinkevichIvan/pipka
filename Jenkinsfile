@@ -30,7 +30,7 @@ pipeline {
             }
             post{
                 always{
-                    step([$class: 'XUnitBuilder', testTimeMargin: '3000', thresholdMode: 1,
+                    step([$class: 'XUnitPublisher', testTimeMargin: '3000', thresholdMode: 1,
                         thresholds: [
                             [$class: 'FailedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '1'],
                             [$class: 'SkippedThreshold', failureNewThreshold: '', failureThreshold: '', unstableNewThreshold: '', unstableThreshold: '']],
